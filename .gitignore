@@ -14,12 +14,8 @@
 /coverage
 
 # local ERP databases and recovery artifacts
-*.db
-!dev.db
 *.db-shm
 *.db-wal
-/.data-backups/
-/backups/
 
 # next.js
 /.next/
@@ -50,4 +46,3 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts

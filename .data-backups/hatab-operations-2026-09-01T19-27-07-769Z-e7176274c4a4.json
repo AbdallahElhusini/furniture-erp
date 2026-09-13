@@ -1,0 +1,1894 @@
+{
+  "format": "HATAB_ERP_LOGICAL_BACKUP",
+  "schemaVersion": 1,
+  "scope": "OPERATIONS",
+  "createdAt": "2026-09-01T19:27:07.769Z",
+  "restoreMode": "MERGE_NO_DELETE",
+  "counts": {
+    "clients": 4,
+    "suppliers": 15,
+    "technicians": 5,
+    "projects": 5,
+    "project_items": 4,
+    "supplier_orders": 2,
+    "order_items": 2,
+    "tasks": 7,
+    "payments": 3,
+    "quote_requests": 3,
+    "quote_items": 7,
+    "portfolio_projects": 4
+  },
+  "data": {
+    "clients": [
+      {
+        "action": "UPSERT",
+        "external_key": "CLIENT-1",
+        "name": "أحمد عبدالعزيز",
+        "company": "شركة النور للتقنية",
+        "phone": "01098765432",
+        "email": "ahmed@alnour.com",
+        "address": "التجمع الخامس، القاهرة",
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "CLIENT-2",
+        "name": "سارة محمد",
+        "company": "عيادة الشفاء",
+        "phone": "01087654321",
+        "email": "sara@alshifa.com",
+        "address": "المعادي، القاهرة",
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "CLIENT-3",
+        "name": "محمد كريم",
+        "company": null,
+        "phone": "01076543210",
+        "email": null,
+        "address": "مدينة نصر، القاهرة",
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "CLIENT-4",
+        "name": "احا ",
+        "company": null,
+        "phone": "01234567890",
+        "email": null,
+        "address": null,
+        "notes": null
+      }
+    ],
+    "suppliers": [
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-1",
+        "name": "مصنع النجار الذهبي",
+        "contact_person": "أحمد محمد",
+        "phone": "01001234567",
+        "email": "golden@factory.com",
+        "address": "المنطقة الصناعية - أكتوبر",
+        "specialization": "أثاث خشبي - مكاتب وطاولات",
+        "quality_rating": 5,
+        "delivery_rating": 4,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-2",
+        "name": "مصنع المعادن المتحدة",
+        "contact_person": "خالد إبراهيم",
+        "phone": "01012345678",
+        "email": "united.metals@factory.com",
+        "address": "العبور الصناعية",
+        "specialization": "أثاث معدني - قواطع وأرفف",
+        "quality_rating": 4,
+        "delivery_rating": 5,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-3",
+        "name": "مصنع الراحة للكراسي",
+        "contact_person": "محمود علي",
+        "phone": "01023456789",
+        "email": "comfort@chairs.com",
+        "address": "دمياط",
+        "specialization": "كراسي مكتبية وانتظار",
+        "quality_rating": 5,
+        "delivery_rating": 5,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-4",
+        "name": "مصنع الأمير للتنجيد",
+        "contact_person": "عمر حسن",
+        "phone": "01034567890",
+        "email": "prince@upholstery.com",
+        "address": "دمياط الجديدة",
+        "specialization": "كنب واستقبال - تنجيد",
+        "quality_rating": 4,
+        "delivery_rating": 3,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-5",
+        "name": "مصنع تكنو ديزاين",
+        "contact_person": "يوسف سمير",
+        "phone": "01045678901",
+        "email": "techno@design.com",
+        "address": "المعادي الصناعية",
+        "specialization": "مكاتب تنفيذية فاخرة",
+        "quality_rating": 5,
+        "delivery_rating": 4,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-6",
+        "name": "مصنع الزجاج العربي",
+        "contact_person": "كريم فؤاد",
+        "phone": "01056789012",
+        "email": "arab.glass@factory.com",
+        "address": "العاشر من رمضان",
+        "specialization": "قواطع زجاجية وأسطح",
+        "quality_rating": 4,
+        "delivery_rating": 4,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-7",
+        "name": "مصنع ستيل لاين",
+        "contact_person": "حسام نبيل",
+        "phone": "01067890123",
+        "email": "steelline@factory.com",
+        "address": "بدر الصناعية",
+        "specialization": "وحدات تخزين معدنية",
+        "quality_rating": 3,
+        "delivery_rating": 4,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-8",
+        "name": "مصنع وود آرت",
+        "contact_person": "طارق مصطفى",
+        "phone": "01078901234",
+        "email": "woodart@factory.com",
+        "address": "دمياط",
+        "specialization": "أرفف ومكتبات خشبية",
+        "quality_rating": 5,
+        "delivery_rating": 3,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-9",
+        "name": "مصنع إليجانت",
+        "contact_person": "سامح عادل",
+        "phone": "01089012345",
+        "email": "elegant@factory.com",
+        "address": "المنصورة",
+        "specialization": "إكسسوارات مكتبية",
+        "quality_rating": 4,
+        "delivery_rating": 5,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-10",
+        "name": "مصنع المستقبل",
+        "contact_person": "مصطفى كمال",
+        "phone": "01090123456",
+        "email": "future@factory.com",
+        "address": "أكتوبر الصناعية",
+        "specialization": "أثاث ذكي ومودرن",
+        "quality_rating": 5,
+        "delivery_rating": 4,
+        "notes": null,
+        "is_active": false
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-11",
+        "name": "محمود الابيض",
+        "contact_person": "محمود الابيض ",
+        "phone": "01028264957",
+        "email": null,
+        "address": "مؤسسة الذكاه شارع الامل 2 , متفرع من الطرولى ",
+        "specialization": "أعمال خشبية ومكاتب",
+        "quality_rating": 3,
+        "delivery_rating": 3,
+        "notes": "بركات مسئول ",
+        "is_active": true
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-12",
+        "name": "good line ",
+        "contact_person": "ابراهيم",
+        "phone": "01157740664",
+        "email": null,
+        "address": "انشاص ",
+        "specialization": "تنجيد وجلود",
+        "quality_rating": 3,
+        "delivery_rating": 3,
+        "notes": null,
+        "is_active": true
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-13",
+        "name": "mac ",
+        "contact_person": "محمد mac",
+        "phone": "01149926980",
+        "email": null,
+        "address": "انشاص ",
+        "specialization": "تنجيد وجلود",
+        "quality_rating": 5,
+        "delivery_rating": 5,
+        "notes": null,
+        "is_active": true
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-14",
+        "name": "euro chair ",
+        "contact_person": null,
+        "phone": "01277330192",
+        "email": null,
+        "address": "دمياط ",
+        "specialization": "كراسي وشبك طبي",
+        "quality_rating": 3,
+        "delivery_rating": 3,
+        "notes": null,
+        "is_active": true
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-15",
+        "name": "مصنع كراسي فايبر مصطفى شرف ",
+        "contact_person": null,
+        "phone": "01114853281",
+        "email": null,
+        "address": null,
+        "specialization": "تنجيد وجلود",
+        "quality_rating": 5,
+        "delivery_rating": 5,
+        "notes": null,
+        "is_active": true
+      }
+    ],
+    "technicians": [
+      {
+        "action": "UPSERT",
+        "external_key": "TECH-1",
+        "name": "محمود حسن",
+        "phone": "01111111111",
+        "specialization": "تركيب أثاث مكتبي",
+        "is_available": true,
+        "daily_rate": 500,
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TECH-2",
+        "name": "أحمد سعيد",
+        "phone": "01222222222",
+        "specialization": "تركيب قواطع وزجاج",
+        "is_available": true,
+        "daily_rate": 600,
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TECH-3",
+        "name": "عبدالله محمد",
+        "phone": "01333333333",
+        "specialization": "نجارة وتشطيب",
+        "is_available": true,
+        "daily_rate": 550,
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TECH-4",
+        "name": "حسن إبراهيم",
+        "phone": "01444444444",
+        "specialization": "كهرباء وتوصيلات",
+        "is_available": true,
+        "daily_rate": 450,
+        "notes": null
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TECH-5",
+        "name": "ياسر عبدالرحمن",
+        "phone": "01555555555",
+        "specialization": "شحن وتوصيل",
+        "is_available": true,
+        "daily_rate": 400,
+        "notes": null
+      }
+    ],
+    "projects": [
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-1",
+        "client_external_key": "CLIENT-1",
+        "title": "تجهيز مكاتب شركة النور - الدور الثالث",
+        "type": "LARGE_PROJECT",
+        "status": "IN_PRODUCTION",
+        "inspection_date": "2026-08-10T00:00:00.000Z",
+        "design_deadline": null,
+        "approval_date": "2026-08-15T00:00:00.000Z",
+        "estimated_delivery": "2026-09-05T00:00:00.000Z",
+        "sync_date": null,
+        "total_cost": 45000,
+        "total_price": 82000,
+        "amount_paid": 41000,
+        "shipping_cost": 2000,
+        "installation_cost": 3000,
+        "notes": "مشروع تجهيز الدور الثالث كامل - 15 محطة عمل + غرفة اجتماعات",
+        "priority": "HIGH"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-2",
+        "client_external_key": "CLIENT-3",
+        "title": "طلب مكتب تنفيذي + كرسي",
+        "type": "SIMPLE_ORDER",
+        "status": "APPROVED",
+        "inspection_date": null,
+        "design_deadline": null,
+        "approval_date": null,
+        "estimated_delivery": null,
+        "sync_date": null,
+        "total_cost": 9800,
+        "total_price": 18500,
+        "amount_paid": 18500,
+        "shipping_cost": 0,
+        "installation_cost": 0,
+        "notes": null,
+        "priority": "MEDIUM"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-3",
+        "client_external_key": "CLIENT-2",
+        "title": "تأثيث عيادة الشفاء - الفرع الجديد",
+        "type": "LARGE_PROJECT",
+        "status": "APPROVED",
+        "inspection_date": "2026-08-18T00:00:00.000Z",
+        "design_deadline": "2026-08-25T00:00:00.000Z",
+        "approval_date": null,
+        "estimated_delivery": null,
+        "sync_date": null,
+        "total_cost": 0,
+        "total_price": 0,
+        "amount_paid": 0,
+        "shipping_cost": 0,
+        "installation_cost": 0,
+        "notes": "فرع جديد - منطقة انتظار + 3 غرف كشف + مكتب إداري",
+        "priority": "HIGH"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-4",
+        "client_external_key": "CLIENT-4",
+        "title": "ورك ستيشن ",
+        "type": "LARGE_PROJECT",
+        "status": "COMPLETED",
+        "inspection_date": null,
+        "design_deadline": null,
+        "approval_date": null,
+        "estimated_delivery": "2026-09-05T19:18:03.536Z",
+        "sync_date": "2026-09-05T19:18:03.536Z",
+        "total_cost": 30800,
+        "total_price": 57500,
+        "amount_paid": 0,
+        "shipping_cost": 0,
+        "installation_cost": 0,
+        "notes": null,
+        "priority": "MEDIUM"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-5",
+        "client_external_key": "CLIENT-4",
+        "title": "اشرف شونده ",
+        "type": "SIMPLE_ORDER",
+        "status": "IN_PRODUCTION",
+        "inspection_date": null,
+        "design_deadline": null,
+        "approval_date": null,
+        "estimated_delivery": "2026-09-07T20:37:42.735Z",
+        "sync_date": "2026-09-07T20:37:42.735Z",
+        "total_cost": 21000,
+        "total_price": 40000,
+        "amount_paid": 0,
+        "shipping_cost": 0,
+        "installation_cost": 0,
+        "notes": null,
+        "priority": "MEDIUM"
+      }
+    ],
+    "project_items": [
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-ITEM-1",
+        "project_external_key": "PROJECT-4",
+        "catalog_sku": "CHR-001",
+        "quantity": 1,
+        "unit_cost": 1800,
+        "unit_price": 3500,
+        "status": "IN_PRODUCTION",
+        "notes": null,
+        "lead_time_days": 5
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-ITEM-2",
+        "project_external_key": "PROJECT-4",
+        "catalog_sku": "SFA-002",
+        "quantity": 1,
+        "unit_cost": 25000,
+        "unit_price": 42000,
+        "status": "PENDING",
+        "notes": "اختارت الون البتنجاى ",
+        "lead_time_days": 10
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-ITEM-3",
+        "project_external_key": "PROJECT-4",
+        "catalog_sku": "CAB-0001",
+        "quantity": 1,
+        "unit_cost": 4000,
+        "unit_price": 12000,
+        "status": "PENDING",
+        "notes": null,
+        "lead_time_days": 7
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PROJECT-ITEM-4",
+        "project_external_key": "PROJECT-5",
+        "catalog_sku": "SOF-0063",
+        "quantity": 1,
+        "unit_cost": 21000,
+        "unit_price": 40000,
+        "status": "IN_PRODUCTION",
+        "notes": null,
+        "lead_time_days": 7
+      }
+    ],
+    "supplier_orders": [
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-ORDER-1",
+        "supplier_external_key": "SUPPLIER-3",
+        "project_external_key": "PROJECT-4",
+        "status": "PENDING",
+        "order_date": "2026-08-29T19:18:03.536Z",
+        "expected_date": "2026-09-03T19:18:03.536Z",
+        "actual_delivery_date": null,
+        "total_amount": 1800,
+        "amount_paid": 0,
+        "notes": "أمر توريد لمشروع: ورك ستيشن  - العميل: احا "
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "SUPPLIER-ORDER-2",
+        "supplier_external_key": "SUPPLIER-13",
+        "project_external_key": "PROJECT-5",
+        "status": "PENDING",
+        "order_date": "2026-08-29T20:37:42.735Z",
+        "expected_date": "2026-09-05T20:37:42.735Z",
+        "actual_delivery_date": null,
+        "total_amount": 21000,
+        "amount_paid": 0,
+        "notes": "أمر توريد لمشروع: اشرف شونده  - العميل: احا "
+      }
+    ],
+    "order_items": [
+      {
+        "action": "UPSERT",
+        "external_key": "ORDER-ITEM-1",
+        "supplier_order_external_key": "SUPPLIER-ORDER-1",
+        "project_item_external_key": "PROJECT-ITEM-1",
+        "quantity": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "ORDER-ITEM-2",
+        "supplier_order_external_key": "SUPPLIER-ORDER-2",
+        "project_item_external_key": "PROJECT-ITEM-4",
+        "quantity": 1
+      }
+    ],
+    "tasks": [
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-1",
+        "project_external_key": "PROJECT-1",
+        "technician_external_key": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "تأكيد استلام خشب مشروع النور من مصنع النجار الذهبي",
+        "description": null,
+        "due_date": "2026-08-20T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "HIGH"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-2",
+        "project_external_key": "PROJECT-1",
+        "technician_external_key": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة تصنيع الكراسي مع مصنع الراحة",
+        "description": null,
+        "due_date": "2026-08-20T21:00:00.000Z",
+        "status": "IN_PROGRESS",
+        "priority": "MEDIUM"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-3",
+        "project_external_key": "PROJECT-1",
+        "technician_external_key": "TECH-1",
+        "type": "INSTALLATION",
+        "title": "تجهيز القواطع الزجاجية للتركيب - مشروع النور",
+        "description": null,
+        "due_date": "2026-08-23T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "HIGH"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-4",
+        "project_external_key": null,
+        "technician_external_key": null,
+        "type": "DESIGN",
+        "title": "تسليم تصميم 3D لعيادة الشفاء",
+        "description": null,
+        "due_date": "2026-08-20T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "URGENT"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-5",
+        "project_external_key": null,
+        "technician_external_key": null,
+        "type": "GENERAL",
+        "title": "تحديث صور الكتالوج - فئة المكاتب التنفيذية",
+        "description": null,
+        "due_date": "2026-08-22T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "LOW"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-6",
+        "project_external_key": "PROJECT-4",
+        "technician_external_key": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة أمر توريد مع مصنع الراحة للكراسي - ورك ستيشن ",
+        "description": "متابعة تصنيع وتوريد عدد 1 صنف من مصنع الراحة للكراسي. تاريخ التسليم المتوقع: ٣‏/٩‏/٢٠٢٦",
+        "due_date": "2026-09-03T19:18:03.536Z",
+        "status": "TODO",
+        "priority": "HIGH"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "TASK-7",
+        "project_external_key": "PROJECT-5",
+        "technician_external_key": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة أمر توريد مع mac  - اشرف شونده ",
+        "description": "متابعة تصنيع وتوريد عدد 1 صنف من mac . تاريخ التسليم المتوقع: ٥‏/٩‏/٢٠٢٦",
+        "due_date": "2026-09-05T20:37:42.735Z",
+        "status": "TODO",
+        "priority": "HIGH"
+      }
+    ],
+    "payments": [
+      {
+        "action": "UPSERT",
+        "external_key": "PAYMENT-1",
+        "project_external_key": "PROJECT-1",
+        "amount": 25000,
+        "method": "BANK_TRANSFER",
+        "notes": "دفعة مقدمة",
+        "date": "2026-08-15T00:00:00.000Z"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PAYMENT-2",
+        "project_external_key": "PROJECT-1",
+        "amount": 16000,
+        "method": "CASH",
+        "notes": "دفعة ثانية",
+        "date": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PAYMENT-3",
+        "project_external_key": "PROJECT-2",
+        "amount": 18500,
+        "method": "BANK_TRANSFER",
+        "notes": "سداد كامل",
+        "date": "2026-08-19T00:00:00.000Z"
+      }
+    ],
+    "quote_requests": [
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-1",
+        "client_name": "خالد أحمد",
+        "client_email": "khaled@company.com",
+        "client_phone": "01065432109",
+        "company": "شركة البدر للاستشارات",
+        "message": "نحتاج تجهيز مكتب 200 متر - 10 محطات عمل + غرفة اجتماعات + استقبال",
+        "status": "NEW",
+        "total_estimate": 0
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-3",
+        "client_name": "abdullah alhussieni.target",
+        "client_email": "abdullahalhussieni.target@gmail.com",
+        "client_phone": "+2011256093",
+        "company": null,
+        "message": "Space type: Another space | Budget direction: Prioritize premium specifications",
+        "status": "NEW",
+        "total_estimate": 0
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-4",
+        "client_name": "abdullah alhussieni.target",
+        "client_email": "abdullahalhussieni.target@gmail.com",
+        "client_phone": "+20111111111111111",
+        "company": null,
+        "message": null,
+        "status": "NEW",
+        "total_estimate": 0
+      }
+    ],
+    "quote_items": [
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-1",
+        "quote_external_key": "QUOTE-1",
+        "catalog_sku": "DSK-001",
+        "quantity": 10
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-2",
+        "quote_external_key": "QUOTE-1",
+        "catalog_sku": "CHR-001",
+        "quantity": 10
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-3",
+        "quote_external_key": "QUOTE-1",
+        "catalog_sku": "MTG-001",
+        "quantity": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-4",
+        "quote_external_key": "QUOTE-1",
+        "catalog_sku": "SFA-002",
+        "quantity": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-6",
+        "quote_external_key": "QUOTE-3",
+        "catalog_sku": "CAB-0008",
+        "quantity": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-7",
+        "quote_external_key": "QUOTE-3",
+        "catalog_sku": "CAB-0004",
+        "quantity": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "QUOTE-ITEM-8",
+        "quote_external_key": "QUOTE-4",
+        "catalog_sku": "CHA-MES-0001",
+        "quantity": 1
+      }
+    ],
+    "portfolio_projects": [
+      {
+        "action": "UPSERT",
+        "external_key": "PORTFOLIO-1",
+        "title_ar": "تجهيز مقر شركة TechStart",
+        "title_en": "TechStart Office Fit-out",
+        "description_ar": "تجهيز كامل لمقر شركة تكنولوجيا - 500 متر مربع، شمل مكاتب عمل، غرف اجتماعات، ومنطقة استقبال فاخرة",
+        "description_en": "Complete fit-out for a tech company - 500 sqm including workstations, meeting rooms, and premium reception area",
+        "client_name": "TechStart Inc.",
+        "location": "التجمع الخامس، القاهرة",
+        "images": "[]",
+        "is_featured": true,
+        "sort_order": 1
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PORTFOLIO-2",
+        "title_ar": "تأثيث عيادة د. سمير",
+        "title_en": "Dr. Samir Clinic Furnishing",
+        "description_ar": "تأثيث عيادة طبية كاملة - منطقة انتظار، غرف كشف، ومكتب إداري",
+        "description_en": "Complete medical clinic furnishing - waiting area, examination rooms, and admin office",
+        "client_name": "عيادة د. سمير",
+        "location": "المعادي، القاهرة",
+        "images": "[]",
+        "is_featured": true,
+        "sort_order": 2
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PORTFOLIO-3",
+        "title_ar": "تجهيز مكاتب بنك المستقبل",
+        "title_en": "Future Bank Office Setup",
+        "description_ar": "تجهيز فرع بنكي كامل - كاونترات خدمة، مكاتب موظفين، وغرفة مدير",
+        "description_en": "Complete bank branch setup - service counters, staff desks, and manager office",
+        "client_name": "بنك المستقبل",
+        "location": "مدينة نصر، القاهرة",
+        "images": "[]",
+        "is_featured": true,
+        "sort_order": 3
+      },
+      {
+        "action": "UPSERT",
+        "external_key": "PORTFOLIO-4",
+        "title_ar": "تأثيث مساحة عمل مشتركة Co-Space",
+        "title_en": "Co-Space Coworking Furnishing",
+        "description_ar": "تصميم وتأثيث مساحة عمل مشتركة - 40 محطة عمل، 3 غرف اجتماعات، كافيتريا",
+        "description_en": "Design and furnishing of coworking space - 40 workstations, 3 meeting rooms, cafeteria",
+        "client_name": "Co-Space",
+        "location": "الشيخ زايد",
+        "images": "[]",
+        "is_featured": false,
+        "sort_order": 4
+      }
+    ]
+  },
+  "records": {
+    "clients": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "name": "أحمد عبدالعزيز",
+        "company": "شركة النور للتقنية",
+        "phone": "01098765432",
+        "email": "ahmed@alnour.com",
+        "address": "التجمع الخامس، القاهرة",
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.894Z",
+        "updatedAt": "2026-08-21T02:20:10.894Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "name": "سارة محمد",
+        "company": "عيادة الشفاء",
+        "phone": "01087654321",
+        "email": "sara@alshifa.com",
+        "address": "المعادي، القاهرة",
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.914Z",
+        "updatedAt": "2026-08-21T02:20:10.914Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "name": "محمد كريم",
+        "company": null,
+        "phone": "01076543210",
+        "email": null,
+        "address": "مدينة نصر، القاهرة",
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.927Z",
+        "updatedAt": "2026-08-21T02:20:10.927Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "name": "احا ",
+        "company": null,
+        "phone": "01234567890",
+        "email": null,
+        "address": null,
+        "notes": null,
+        "createdAt": "2026-08-29T19:16:41.865Z",
+        "updatedAt": "2026-08-29T19:16:41.865Z"
+      }
+    ],
+    "suppliers": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "name": "مصنع النجار الذهبي",
+        "contactPerson": "أحمد محمد",
+        "phone": "01001234567",
+        "email": "golden@factory.com",
+        "address": "المنطقة الصناعية - أكتوبر",
+        "specialization": "أثاث خشبي - مكاتب وطاولات",
+        "qualityRating": 5,
+        "deliveryRating": 4,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.161Z",
+        "updatedAt": "2026-08-29T20:15:24.900Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "name": "مصنع المعادن المتحدة",
+        "contactPerson": "خالد إبراهيم",
+        "phone": "01012345678",
+        "email": "united.metals@factory.com",
+        "address": "العبور الصناعية",
+        "specialization": "أثاث معدني - قواطع وأرفف",
+        "qualityRating": 4,
+        "deliveryRating": 5,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.162Z",
+        "updatedAt": "2026-08-29T20:15:21.901Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "name": "مصنع الراحة للكراسي",
+        "contactPerson": "محمود علي",
+        "phone": "01023456789",
+        "email": "comfort@chairs.com",
+        "address": "دمياط",
+        "specialization": "كراسي مكتبية وانتظار",
+        "qualityRating": 5,
+        "deliveryRating": 5,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.163Z",
+        "updatedAt": "2026-08-29T20:15:09.795Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "name": "مصنع الأمير للتنجيد",
+        "contactPerson": "عمر حسن",
+        "phone": "01034567890",
+        "email": "prince@upholstery.com",
+        "address": "دمياط الجديدة",
+        "specialization": "كنب واستقبال - تنجيد",
+        "qualityRating": 4,
+        "deliveryRating": 3,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.163Z",
+        "updatedAt": "2026-08-29T20:15:36.552Z"
+      },
+      {
+        "id": 5,
+        "externalKey": null,
+        "name": "مصنع تكنو ديزاين",
+        "contactPerson": "يوسف سمير",
+        "phone": "01045678901",
+        "email": "techno@design.com",
+        "address": "المعادي الصناعية",
+        "specialization": "مكاتب تنفيذية فاخرة",
+        "qualityRating": 5,
+        "deliveryRating": 4,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.163Z",
+        "updatedAt": "2026-08-29T20:15:27.795Z"
+      },
+      {
+        "id": 6,
+        "externalKey": null,
+        "name": "مصنع الزجاج العربي",
+        "contactPerson": "كريم فؤاد",
+        "phone": "01056789012",
+        "email": "arab.glass@factory.com",
+        "address": "العاشر من رمضان",
+        "specialization": "قواطع زجاجية وأسطح",
+        "qualityRating": 4,
+        "deliveryRating": 4,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.163Z",
+        "updatedAt": "2026-08-29T20:15:13.596Z"
+      },
+      {
+        "id": 7,
+        "externalKey": null,
+        "name": "مصنع ستيل لاين",
+        "contactPerson": "حسام نبيل",
+        "phone": "01067890123",
+        "email": "steelline@factory.com",
+        "address": "بدر الصناعية",
+        "specialization": "وحدات تخزين معدنية",
+        "qualityRating": 3,
+        "deliveryRating": 4,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.164Z",
+        "updatedAt": "2026-08-29T20:15:30.641Z"
+      },
+      {
+        "id": 8,
+        "externalKey": null,
+        "name": "مصنع وود آرت",
+        "contactPerson": "طارق مصطفى",
+        "phone": "01078901234",
+        "email": "woodart@factory.com",
+        "address": "دمياط",
+        "specialization": "أرفف ومكتبات خشبية",
+        "qualityRating": 5,
+        "deliveryRating": 3,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.164Z",
+        "updatedAt": "2026-08-29T20:15:33.558Z"
+      },
+      {
+        "id": 9,
+        "externalKey": null,
+        "name": "مصنع إليجانت",
+        "contactPerson": "سامح عادل",
+        "phone": "01089012345",
+        "email": "elegant@factory.com",
+        "address": "المنصورة",
+        "specialization": "إكسسوارات مكتبية",
+        "qualityRating": 4,
+        "deliveryRating": 5,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.164Z",
+        "updatedAt": "2026-08-29T20:15:39.194Z"
+      },
+      {
+        "id": 10,
+        "externalKey": null,
+        "name": "مصنع المستقبل",
+        "contactPerson": "مصطفى كمال",
+        "phone": "01090123456",
+        "email": "future@factory.com",
+        "address": "أكتوبر الصناعية",
+        "specialization": "أثاث ذكي ومودرن",
+        "qualityRating": 5,
+        "deliveryRating": 4,
+        "notes": null,
+        "isActive": false,
+        "createdAt": "2026-08-21T02:20:10.164Z",
+        "updatedAt": "2026-08-29T20:15:18.377Z"
+      },
+      {
+        "id": 11,
+        "externalKey": null,
+        "name": "محمود الابيض",
+        "contactPerson": "محمود الابيض ",
+        "phone": "01028264957",
+        "email": null,
+        "address": "مؤسسة الذكاه شارع الامل 2 , متفرع من الطرولى ",
+        "specialization": "أعمال خشبية ومكاتب",
+        "qualityRating": 3,
+        "deliveryRating": 3,
+        "notes": "بركات مسئول ",
+        "isActive": true,
+        "createdAt": "2026-08-29T20:18:30.946Z",
+        "updatedAt": "2026-08-29T20:18:30.946Z"
+      },
+      {
+        "id": 12,
+        "externalKey": null,
+        "name": "good line ",
+        "contactPerson": "ابراهيم",
+        "phone": "01157740664",
+        "email": null,
+        "address": "انشاص ",
+        "specialization": "تنجيد وجلود",
+        "qualityRating": 3,
+        "deliveryRating": 3,
+        "notes": null,
+        "isActive": true,
+        "createdAt": "2026-08-29T20:20:47.845Z",
+        "updatedAt": "2026-08-29T20:20:47.845Z"
+      },
+      {
+        "id": 13,
+        "externalKey": null,
+        "name": "mac ",
+        "contactPerson": "محمد mac",
+        "phone": "01149926980",
+        "email": null,
+        "address": "انشاص ",
+        "specialization": "تنجيد وجلود",
+        "qualityRating": 5,
+        "deliveryRating": 5,
+        "notes": null,
+        "isActive": true,
+        "createdAt": "2026-08-29T20:22:56.090Z",
+        "updatedAt": "2026-08-29T20:22:56.090Z"
+      },
+      {
+        "id": 14,
+        "externalKey": null,
+        "name": "euro chair ",
+        "contactPerson": null,
+        "phone": "01277330192",
+        "email": null,
+        "address": "دمياط ",
+        "specialization": "كراسي وشبك طبي",
+        "qualityRating": 3,
+        "deliveryRating": 3,
+        "notes": null,
+        "isActive": true,
+        "createdAt": "2026-08-29T20:25:22.078Z",
+        "updatedAt": "2026-08-29T20:25:22.078Z"
+      },
+      {
+        "id": 15,
+        "externalKey": null,
+        "name": "مصنع كراسي فايبر مصطفى شرف ",
+        "contactPerson": null,
+        "phone": "01114853281",
+        "email": null,
+        "address": null,
+        "specialization": "تنجيد وجلود",
+        "qualityRating": 5,
+        "deliveryRating": 5,
+        "notes": null,
+        "isActive": true,
+        "createdAt": "2026-08-29T20:33:05.145Z",
+        "updatedAt": "2026-08-29T20:33:05.145Z"
+      }
+    ],
+    "technicians": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "name": "محمود حسن",
+        "phone": "01111111111",
+        "specialization": "تركيب أثاث مكتبي",
+        "isAvailable": true,
+        "dailyRate": 500,
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.761Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "name": "أحمد سعيد",
+        "phone": "01222222222",
+        "specialization": "تركيب قواطع وزجاج",
+        "isAvailable": true,
+        "dailyRate": 600,
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.761Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "name": "عبدالله محمد",
+        "phone": "01333333333",
+        "specialization": "نجارة وتشطيب",
+        "isAvailable": true,
+        "dailyRate": 550,
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.761Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "name": "حسن إبراهيم",
+        "phone": "01444444444",
+        "specialization": "كهرباء وتوصيلات",
+        "isAvailable": true,
+        "dailyRate": 450,
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.761Z"
+      },
+      {
+        "id": 5,
+        "externalKey": null,
+        "name": "ياسر عبدالرحمن",
+        "phone": "01555555555",
+        "specialization": "شحن وتوصيل",
+        "isAvailable": true,
+        "dailyRate": 400,
+        "notes": null,
+        "createdAt": "2026-08-21T02:20:10.761Z"
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "clientId": 1,
+        "title": "تجهيز مكاتب شركة النور - الدور الثالث",
+        "type": "LARGE_PROJECT",
+        "status": "IN_PRODUCTION",
+        "inspectionDate": "2026-08-10T00:00:00.000Z",
+        "designDeadline": null,
+        "approvalDate": "2026-08-15T00:00:00.000Z",
+        "estimatedDelivery": "2026-09-05T00:00:00.000Z",
+        "syncDate": null,
+        "totalCost": 45000,
+        "totalPrice": 82000,
+        "amountPaid": 41000,
+        "shippingCost": 2000,
+        "installationCost": 3000,
+        "notes": "مشروع تجهيز الدور الثالث كامل - 15 محطة عمل + غرفة اجتماعات",
+        "priority": "HIGH",
+        "createdAt": "2026-08-21T02:20:10.948Z",
+        "updatedAt": "2026-08-21T02:20:10.948Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "clientId": 3,
+        "title": "طلب مكتب تنفيذي + كرسي",
+        "type": "SIMPLE_ORDER",
+        "status": "APPROVED",
+        "inspectionDate": null,
+        "designDeadline": null,
+        "approvalDate": null,
+        "estimatedDelivery": null,
+        "syncDate": null,
+        "totalCost": 9800,
+        "totalPrice": 18500,
+        "amountPaid": 18500,
+        "shippingCost": 0,
+        "installationCost": 0,
+        "notes": null,
+        "priority": "MEDIUM",
+        "createdAt": "2026-08-21T02:20:10.964Z",
+        "updatedAt": "2026-08-21T02:20:10.964Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "clientId": 2,
+        "title": "تأثيث عيادة الشفاء - الفرع الجديد",
+        "type": "LARGE_PROJECT",
+        "status": "APPROVED",
+        "inspectionDate": "2026-08-18T00:00:00.000Z",
+        "designDeadline": "2026-08-25T00:00:00.000Z",
+        "approvalDate": null,
+        "estimatedDelivery": null,
+        "syncDate": null,
+        "totalCost": 0,
+        "totalPrice": 0,
+        "amountPaid": 0,
+        "shippingCost": 0,
+        "installationCost": 0,
+        "notes": "فرع جديد - منطقة انتظار + 3 غرف كشف + مكتب إداري",
+        "priority": "HIGH",
+        "createdAt": "2026-08-21T02:20:10.979Z",
+        "updatedAt": "2026-08-21T02:49:32.103Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "clientId": 4,
+        "title": "ورك ستيشن ",
+        "type": "LARGE_PROJECT",
+        "status": "COMPLETED",
+        "inspectionDate": null,
+        "designDeadline": null,
+        "approvalDate": null,
+        "estimatedDelivery": "2026-09-05T19:18:03.536Z",
+        "syncDate": "2026-09-05T19:18:03.536Z",
+        "totalCost": 30800,
+        "totalPrice": 57500,
+        "amountPaid": 0,
+        "shippingCost": 0,
+        "installationCost": 0,
+        "notes": null,
+        "priority": "MEDIUM",
+        "createdAt": "2026-08-29T19:16:41.882Z",
+        "updatedAt": "2026-08-29T20:27:10.170Z"
+      },
+      {
+        "id": 5,
+        "externalKey": null,
+        "clientId": 4,
+        "title": "اشرف شونده ",
+        "type": "SIMPLE_ORDER",
+        "status": "IN_PRODUCTION",
+        "inspectionDate": null,
+        "designDeadline": null,
+        "approvalDate": null,
+        "estimatedDelivery": "2026-09-07T20:37:42.735Z",
+        "syncDate": "2026-09-07T20:37:42.735Z",
+        "totalCost": 21000,
+        "totalPrice": 40000,
+        "amountPaid": 0,
+        "shippingCost": 0,
+        "installationCost": 0,
+        "notes": null,
+        "priority": "MEDIUM",
+        "createdAt": "2026-08-29T20:31:52.983Z",
+        "updatedAt": "2026-08-29T20:37:42.768Z"
+      }
+    ],
+    "project_items": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "projectId": 4,
+        "catalogItemId": 4,
+        "quantity": 1,
+        "unitCost": 1800,
+        "unitPrice": 3500,
+        "status": "IN_PRODUCTION",
+        "notes": null,
+        "leadTimeDays": 5
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "projectId": 4,
+        "catalogItemId": 16,
+        "quantity": 1,
+        "unitCost": 25000,
+        "unitPrice": 42000,
+        "status": "PENDING",
+        "notes": "اختارت الون البتنجاى ",
+        "leadTimeDays": 10
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "projectId": 4,
+        "catalogItemId": 29,
+        "quantity": 1,
+        "unitCost": 4000,
+        "unitPrice": 12000,
+        "status": "PENDING",
+        "notes": null,
+        "leadTimeDays": 7
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "projectId": 5,
+        "catalogItemId": 515,
+        "quantity": 1,
+        "unitCost": 21000,
+        "unitPrice": 40000,
+        "status": "IN_PRODUCTION",
+        "notes": null,
+        "leadTimeDays": 7
+      }
+    ],
+    "supplier_orders": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "supplierId": 3,
+        "projectId": 4,
+        "status": "PENDING",
+        "orderDate": "2026-08-29T19:18:03.536Z",
+        "expectedDate": "2026-09-03T19:18:03.536Z",
+        "actualDeliveryDate": null,
+        "totalAmount": 1800,
+        "amountPaid": 0,
+        "notes": "أمر توريد لمشروع: ورك ستيشن  - العميل: احا ",
+        "createdAt": "2026-08-29T19:18:03.558Z",
+        "updatedAt": "2026-08-29T19:18:03.558Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "supplierId": 13,
+        "projectId": 5,
+        "status": "PENDING",
+        "orderDate": "2026-08-29T20:37:42.735Z",
+        "expectedDate": "2026-09-05T20:37:42.735Z",
+        "actualDeliveryDate": null,
+        "totalAmount": 21000,
+        "amountPaid": 0,
+        "notes": "أمر توريد لمشروع: اشرف شونده  - العميل: احا ",
+        "createdAt": "2026-08-29T20:37:42.749Z",
+        "updatedAt": "2026-08-29T20:37:42.749Z"
+      }
+    ],
+    "order_items": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "supplierOrderId": 1,
+        "projectItemId": 1,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "supplierOrderId": 2,
+        "projectItemId": 4,
+        "quantity": 1
+      }
+    ],
+    "tasks": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "projectId": 1,
+        "technicianId": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "تأكيد استلام خشب مشروع النور من مصنع النجار الذهبي",
+        "description": null,
+        "dueDate": "2026-08-20T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "HIGH",
+        "createdAt": "2026-08-21T02:20:10.997Z",
+        "updatedAt": "2026-08-21T02:20:10.997Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "projectId": 1,
+        "technicianId": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة تصنيع الكراسي مع مصنع الراحة",
+        "description": null,
+        "dueDate": "2026-08-20T21:00:00.000Z",
+        "status": "IN_PROGRESS",
+        "priority": "MEDIUM",
+        "createdAt": "2026-08-21T02:20:10.998Z",
+        "updatedAt": "2026-08-21T02:20:10.998Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "projectId": 1,
+        "technicianId": 1,
+        "type": "INSTALLATION",
+        "title": "تجهيز القواطع الزجاجية للتركيب - مشروع النور",
+        "description": null,
+        "dueDate": "2026-08-23T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "HIGH",
+        "createdAt": "2026-08-21T02:20:10.999Z",
+        "updatedAt": "2026-08-21T02:20:10.999Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "projectId": null,
+        "technicianId": null,
+        "type": "DESIGN",
+        "title": "تسليم تصميم 3D لعيادة الشفاء",
+        "description": null,
+        "dueDate": "2026-08-20T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "URGENT",
+        "createdAt": "2026-08-21T02:20:11.000Z",
+        "updatedAt": "2026-08-21T02:20:11.000Z"
+      },
+      {
+        "id": 5,
+        "externalKey": null,
+        "projectId": null,
+        "technicianId": null,
+        "type": "GENERAL",
+        "title": "تحديث صور الكتالوج - فئة المكاتب التنفيذية",
+        "description": null,
+        "dueDate": "2026-08-22T21:00:00.000Z",
+        "status": "TODO",
+        "priority": "LOW",
+        "createdAt": "2026-08-21T02:20:11.000Z",
+        "updatedAt": "2026-08-21T02:20:11.000Z"
+      },
+      {
+        "id": 6,
+        "externalKey": null,
+        "projectId": 4,
+        "technicianId": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة أمر توريد مع مصنع الراحة للكراسي - ورك ستيشن ",
+        "description": "متابعة تصنيع وتوريد عدد 1 صنف من مصنع الراحة للكراسي. تاريخ التسليم المتوقع: ٣‏/٩‏/٢٠٢٦",
+        "dueDate": "2026-09-03T19:18:03.536Z",
+        "status": "TODO",
+        "priority": "HIGH",
+        "createdAt": "2026-08-29T19:18:03.577Z",
+        "updatedAt": "2026-08-29T19:18:03.577Z"
+      },
+      {
+        "id": 7,
+        "externalKey": null,
+        "projectId": 5,
+        "technicianId": null,
+        "type": "SUPPLIER_FOLLOWUP",
+        "title": "متابعة أمر توريد مع mac  - اشرف شونده ",
+        "description": "متابعة تصنيع وتوريد عدد 1 صنف من mac . تاريخ التسليم المتوقع: ٥‏/٩‏/٢٠٢٦",
+        "dueDate": "2026-09-05T20:37:42.735Z",
+        "status": "TODO",
+        "priority": "HIGH",
+        "createdAt": "2026-08-29T20:37:42.765Z",
+        "updatedAt": "2026-08-29T20:37:42.765Z"
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "projectId": 1,
+        "amount": 25000,
+        "method": "BANK_TRANSFER",
+        "notes": "دفعة مقدمة",
+        "date": "2026-08-15T00:00:00.000Z",
+        "createdAt": "2026-08-21T02:20:11.138Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "projectId": 1,
+        "amount": 16000,
+        "method": "CASH",
+        "notes": "دفعة ثانية",
+        "date": "2026-08-20T00:00:00.000Z",
+        "createdAt": "2026-08-21T02:20:11.138Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "projectId": 2,
+        "amount": 18500,
+        "method": "BANK_TRANSFER",
+        "notes": "سداد كامل",
+        "date": "2026-08-19T00:00:00.000Z",
+        "createdAt": "2026-08-21T02:20:11.138Z"
+      }
+    ],
+    "quote_requests": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "clientName": "خالد أحمد",
+        "clientEmail": "khaled@company.com",
+        "clientPhone": "01065432109",
+        "company": "شركة البدر للاستشارات",
+        "message": "نحتاج تجهيز مكتب 200 متر - 10 محطات عمل + غرفة اجتماعات + استقبال",
+        "status": "NEW",
+        "totalEstimate": 0,
+        "createdAt": "2026-08-21T02:20:11.070Z",
+        "updatedAt": "2026-08-21T02:20:11.070Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "clientName": "abdullah alhussieni.target",
+        "clientEmail": "abdullahalhussieni.target@gmail.com",
+        "clientPhone": "+2011256093",
+        "company": null,
+        "message": "Space type: Another space | Budget direction: Prioritize premium specifications",
+        "status": "NEW",
+        "totalEstimate": 0,
+        "createdAt": "2026-08-26T02:18:48.785Z",
+        "updatedAt": "2026-08-26T02:18:48.785Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "clientName": "abdullah alhussieni.target",
+        "clientEmail": "abdullahalhussieni.target@gmail.com",
+        "clientPhone": "+20111111111111111",
+        "company": null,
+        "message": null,
+        "status": "NEW",
+        "totalEstimate": 0,
+        "createdAt": "2026-08-29T19:10:24.514Z",
+        "updatedAt": "2026-08-29T19:10:24.514Z"
+      }
+    ],
+    "quote_items": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "quoteId": 1,
+        "catalogItemId": 1,
+        "quantity": 10
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "quoteId": 1,
+        "catalogItemId": 4,
+        "quantity": 10
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "quoteId": 1,
+        "catalogItemId": 10,
+        "quantity": 1
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "quoteId": 1,
+        "catalogItemId": 16,
+        "quantity": 1
+      },
+      {
+        "id": 6,
+        "externalKey": null,
+        "quoteId": 3,
+        "catalogItemId": 36,
+        "quantity": 1
+      },
+      {
+        "id": 7,
+        "externalKey": null,
+        "quoteId": 3,
+        "catalogItemId": 32,
+        "quantity": 1
+      },
+      {
+        "id": 8,
+        "externalKey": null,
+        "quoteId": 4,
+        "catalogItemId": 141,
+        "quantity": 1
+      }
+    ],
+    "portfolio_projects": [
+      {
+        "id": 1,
+        "externalKey": null,
+        "titleAr": "تجهيز مقر شركة TechStart",
+        "titleEn": "TechStart Office Fit-out",
+        "descriptionAr": "تجهيز كامل لمقر شركة تكنولوجيا - 500 متر مربع، شمل مكاتب عمل، غرف اجتماعات، ومنطقة استقبال فاخرة",
+        "descriptionEn": "Complete fit-out for a tech company - 500 sqm including workstations, meeting rooms, and premium reception area",
+        "clientName": "TechStart Inc.",
+        "location": "التجمع الخامس، القاهرة",
+        "images": "[]",
+        "isFeatured": true,
+        "sortOrder": 1,
+        "createdAt": "2026-08-21T02:20:10.839Z"
+      },
+      {
+        "id": 2,
+        "externalKey": null,
+        "titleAr": "تأثيث عيادة د. سمير",
+        "titleEn": "Dr. Samir Clinic Furnishing",
+        "descriptionAr": "تأثيث عيادة طبية كاملة - منطقة انتظار، غرف كشف، ومكتب إداري",
+        "descriptionEn": "Complete medical clinic furnishing - waiting area, examination rooms, and admin office",
+        "clientName": "عيادة د. سمير",
+        "location": "المعادي، القاهرة",
+        "images": "[]",
+        "isFeatured": true,
+        "sortOrder": 2,
+        "createdAt": "2026-08-21T02:20:10.839Z"
+      },
+      {
+        "id": 3,
+        "externalKey": null,
+        "titleAr": "تجهيز مكاتب بنك المستقبل",
+        "titleEn": "Future Bank Office Setup",
+        "descriptionAr": "تجهيز فرع بنكي كامل - كاونترات خدمة، مكاتب موظفين، وغرفة مدير",
+        "descriptionEn": "Complete bank branch setup - service counters, staff desks, and manager office",
+        "clientName": "بنك المستقبل",
+        "location": "مدينة نصر، القاهرة",
+        "images": "[]",
+        "isFeatured": true,
+        "sortOrder": 3,
+        "createdAt": "2026-08-21T02:20:10.839Z"
+      },
+      {
+        "id": 4,
+        "externalKey": null,
+        "titleAr": "تأثيث مساحة عمل مشتركة Co-Space",
+        "titleEn": "Co-Space Coworking Furnishing",
+        "descriptionAr": "تصميم وتأثيث مساحة عمل مشتركة - 40 محطة عمل، 3 غرف اجتماعات، كافيتريا",
+        "descriptionEn": "Design and furnishing of coworking space - 40 workstations, 3 meeting rooms, cafeteria",
+        "clientName": "Co-Space",
+        "location": "الشيخ زايد",
+        "images": "[]",
+        "isFeatured": false,
+        "sortOrder": 4,
+        "createdAt": "2026-08-21T02:20:10.839Z"
+      }
+    ]
+  },
+  "bindings": {
+    "clients": [
+      {
+        "id": 1,
+        "key": "CLIENT-1"
+      },
+      {
+        "id": 2,
+        "key": "CLIENT-2"
+      },
+      {
+        "id": 3,
+        "key": "CLIENT-3"
+      },
+      {
+        "id": 4,
+        "key": "CLIENT-4"
+      }
+    ],
+    "suppliers": [
+      {
+        "id": 1,
+        "key": "SUPPLIER-1"
+      },
+      {
+        "id": 2,
+        "key": "SUPPLIER-2"
+      },
+      {
+        "id": 3,
+        "key": "SUPPLIER-3"
+      },
+      {
+        "id": 4,
+        "key": "SUPPLIER-4"
+      },
+      {
+        "id": 5,
+        "key": "SUPPLIER-5"
+      },
+      {
+        "id": 6,
+        "key": "SUPPLIER-6"
+      },
+      {
+        "id": 7,
+        "key": "SUPPLIER-7"
+      },
+      {
+        "id": 8,
+        "key": "SUPPLIER-8"
+      },
+      {
+        "id": 9,
+        "key": "SUPPLIER-9"
+      },
+      {
+        "id": 10,
+        "key": "SUPPLIER-10"
+      },
+      {
+        "id": 11,
+        "key": "SUPPLIER-11"
+      },
+      {
+        "id": 12,
+        "key": "SUPPLIER-12"
+      },
+      {
+        "id": 13,
+        "key": "SUPPLIER-13"
+      },
+      {
+        "id": 14,
+        "key": "SUPPLIER-14"
+      },
+      {
+        "id": 15,
+        "key": "SUPPLIER-15"
+      }
+    ],
+    "technicians": [
+      {
+        "id": 1,
+        "key": "TECH-1"
+      },
+      {
+        "id": 2,
+        "key": "TECH-2"
+      },
+      {
+        "id": 3,
+        "key": "TECH-3"
+      },
+      {
+        "id": 4,
+        "key": "TECH-4"
+      },
+      {
+        "id": 5,
+        "key": "TECH-5"
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "key": "PROJECT-1"
+      },
+      {
+        "id": 2,
+        "key": "PROJECT-2"
+      },
+      {
+        "id": 3,
+        "key": "PROJECT-3"
+      },
+      {
+        "id": 4,
+        "key": "PROJECT-4"
+      },
+      {
+        "id": 5,
+        "key": "PROJECT-5"
+      }
+    ],
+    "project_items": [
+      {
+        "id": 1,
+        "key": "PROJECT-ITEM-1"
+      },
+      {
+        "id": 2,
+        "key": "PROJECT-ITEM-2"
+      },
+      {
+        "id": 3,
+        "key": "PROJECT-ITEM-3"
+      },
+      {
+        "id": 4,
+        "key": "PROJECT-ITEM-4"
+      }
+    ],
+    "supplier_orders": [
+      {
+        "id": 1,
+        "key": "SUPPLIER-ORDER-1"
+      },
+      {
+        "id": 2,
+        "key": "SUPPLIER-ORDER-2"
+      }
+    ],
+    "order_items": [
+      {
+        "id": 1,
+        "key": "ORDER-ITEM-1"
+      },
+      {
+        "id": 2,
+        "key": "ORDER-ITEM-2"
+      }
+    ],
+    "tasks": [
+      {
+        "id": 1,
+        "key": "TASK-1"
+      },
+      {
+        "id": 2,
+        "key": "TASK-2"
+      },
+      {
+        "id": 3,
+        "key": "TASK-3"
+      },
+      {
+        "id": 4,
+        "key": "TASK-4"
+      },
+      {
+        "id": 5,
+        "key": "TASK-5"
+      },
+      {
+        "id": 6,
+        "key": "TASK-6"
+      },
+      {
+        "id": 7,
+        "key": "TASK-7"
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "key": "PAYMENT-1"
+      },
+      {
+        "id": 2,
+        "key": "PAYMENT-2"
+      },
+      {
+        "id": 3,
+        "key": "PAYMENT-3"
+      }
+    ],
+    "quote_requests": [
+      {
+        "id": 1,
+        "key": "QUOTE-1"
+      },
+      {
+        "id": 3,
+        "key": "QUOTE-3"
+      },
+      {
+        "id": 4,
+        "key": "QUOTE-4"
+      }
+    ],
+    "quote_items": [
+      {
+        "id": 1,
+        "key": "QUOTE-ITEM-1"
+      },
+      {
+        "id": 2,
+        "key": "QUOTE-ITEM-2"
+      },
+      {
+        "id": 3,
+        "key": "QUOTE-ITEM-3"
+      },
+      {
+        "id": 4,
+        "key": "QUOTE-ITEM-4"
+      },
+      {
+        "id": 6,
+        "key": "QUOTE-ITEM-6"
+      },
+      {
+        "id": 7,
+        "key": "QUOTE-ITEM-7"
+      },
+      {
+        "id": 8,
+        "key": "QUOTE-ITEM-8"
+      }
+    ],
+    "portfolio_projects": [
+      {
+        "id": 1,
+        "key": "PORTFOLIO-1"
+      },
+      {
+        "id": 2,
+        "key": "PORTFOLIO-2"
+      },
+      {
+        "id": 3,
+        "key": "PORTFOLIO-3"
+      },
+      {
+        "id": 4,
+        "key": "PORTFOLIO-4"
+      }
+    ]
+  },
+  "sourceHash": "e7176274c4a4a32c4eff889de898d690618f47a51100a4fc8970768fdf215e8b"
+}

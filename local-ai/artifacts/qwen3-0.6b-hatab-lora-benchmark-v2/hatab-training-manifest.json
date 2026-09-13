@@ -1,0 +1,134 @@
+{
+  "schema": "hatab-erp-intent-lora-v2",
+  "baseModel": "Qwen/Qwen3-0.6B",
+  "adapterPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-benchmark-v2",
+  "adapterModelSha256": "e56fb68d2ea8f3bdb7d17fa156a62166c90248f074751dd8cb5dbddb9419b2d1",
+  "adapterConfigSha256": "0fc798e1d98f2c5861af930080e7569c3024bf4d1c172c63b76332a0f377f024",
+  "datasetPath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\train.jsonl",
+  "datasetSha256": "e212139fd77f821f2f257c066aac5d228031812c31d0c7f7cab18503ab2f555a",
+  "datasetRows": 2718,
+  "sampling": {
+    "policy": "balanced-round-robin",
+    "seed": 260901,
+    "sourceRows": 1179,
+    "sampledRows": 2718,
+    "bucketCount": 6,
+    "sourceBucketCounts": {
+      "ADD_PROJECT_ITEM": 193,
+      "CREATE_CLIENT": 204,
+      "CREATE_ORDER_BUNDLE": 453,
+      "CREATE_TASK": 106,
+      "UPDATE_PROJECT_STATUS": 104,
+      "__ABSTAIN__": 119
+    },
+    "sampledBucketCounts": {
+      "ADD_PROJECT_ITEM": 453,
+      "CREATE_CLIENT": 453,
+      "CREATE_ORDER_BUNDLE": 453,
+      "CREATE_TASK": 453,
+      "UPDATE_PROJECT_STATUS": 453,
+      "__ABSTAIN__": 453
+    },
+    "observedKinds": [
+      "ADD_PROJECT_ITEM",
+      "CREATE_CLIENT",
+      "CREATE_ORDER_BUNDLE",
+      "CREATE_TASK",
+      "UPDATE_PROJECT_STATUS"
+    ],
+    "requiredKinds": [
+      "ADD_PROJECT_ITEM",
+      "CREATE_CLIENT",
+      "CREATE_ORDER_BUNDLE",
+      "CREATE_TASK",
+      "UPDATE_PROJECT_STATUS"
+    ],
+    "abstentionRequired": true,
+    "abstentionPresent": true,
+    "targetRowsPerBucket": 453,
+    "oversampledRows": 1539,
+    "oversampledByBucket": {
+      "ADD_PROJECT_ITEM": 260,
+      "CREATE_CLIENT": 249,
+      "CREATE_ORDER_BUNDLE": 0,
+      "CREATE_TASK": 347,
+      "UPDATE_PROJECT_STATUS": 349,
+      "__ABSTAIN__": 334
+    },
+    "orderSha256": "7c708ee35973d327384778412a1417247775f1f7e952d6d623de70a8c1419252"
+  },
+  "maxObservedTokens": 541,
+  "skippedTooLong": 0,
+  "skippedNoLabels": 0,
+  "maxLength": 768,
+  "optimizerSteps": 1,
+  "gradientAccumulation": 1,
+  "learningRate": 0.0002,
+  "resumedFrom": null,
+  "selectedKinds": [],
+  "currentStageDatasetKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "datasetKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "modelEnabledKindsAtTraining": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "allowDisabled": false,
+  "promptSha256": "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb",
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 2,
+  "contractSha256": "ab71570bc4cc7e10da283e483bf43ff38cbb97d9e777770623f178f8ec3f194f",
+  "contractFileSha256": "27a19843691bc8a165d277b20eea5b88402a24286573d57c88e35157f62a4e53",
+  "registeredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "modelEnabledKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "resumedManifestContractSha256": null,
+  "naturalOnly": false,
+  "seed": 260901,
+  "elapsedSeconds": 34.5,
+  "torchVersion": "2.5.1+cpu",
+  "runtime": {
+    "pythonVersion": "3.11.9",
+    "pythonImplementation": "CPython",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "executable": "D:\\hatab-local-ai\\.venv\\Scripts\\python.exe",
+    "torchVersion": "2.5.1+cpu",
+    "transformersVersion": "5.16.1",
+    "peftVersion": "0.20.0",
+    "threads": 7
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "hatab-erp-intent-lora-v1",
+  "baseModel": "Qwen/Qwen3-0.6B",
+  "adapterPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora",
+  "datasetPath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\train.jsonl",
+  "datasetSha256": "90abe0b25e6a153b939f7441b7e76fb4adb879e6d32cc2f703e72fb56baca3ae",
+  "datasetRows": 1366,
+  "maxLength": 192,
+  "optimizerSteps": 40,
+  "gradientAccumulation": 4,
+  "learningRate": 0.0002,
+  "seed": 260901,
+  "elapsedSeconds": 1093.0,
+  "torchVersion": "2.5.1+cpu"
+}
