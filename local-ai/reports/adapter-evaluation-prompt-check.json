@@ -1,0 +1,62 @@
+{
+  "schema": "hatab-erp-intent-evaluation-v1",
+  "samples": 4,
+  "validJsonRate": 1.0,
+  "actionKindExactRate": 1.0,
+  "contractValidRate": 0.75,
+  "exactMatchRate": 0.5,
+  "results": [
+    {
+      "index": 1,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "predictedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_CLIENT\",\"name\":\"منى عادل\",\"phone\":\"01012345908\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 2,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "predictedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_CLIENT\",\"name\":\"سارة خالد\",\"phone\":\"01012345849\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 3,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": false,
+      "exactMatch": false,
+      "expectedKinds": [],
+      "predictedKinds": [],
+      "completion": "{\"actions\":[],\"unparsed\":\"اعمل خصم كبير\"}"
+    },
+    {
+      "index": 4,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مؤسسة البنيان\",\"clientPhone\":\"01012346929\",\"projectTitle\":\"مساحة فريق المبيعات\",\"productSku\":\"MEE-0014\",\"quantity\":4}],\"unparsed\":[]}"
+    }
+  ]
+}

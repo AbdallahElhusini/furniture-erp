@@ -1,0 +1,149 @@
+{
+  "schema": "hatab-erp-intent-evaluation-v1",
+  "samples": 12,
+  "validJsonRate": 1.0,
+  "actionKindExactRate": 0.9166666666666666,
+  "results": [
+    {
+      "index": 1,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "predictedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_CLIENT\",\"name\":\"منى عادل\",\"phone\":\"01012345908\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 2,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "predictedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_CLIENT\",\"name\":\"سارة خالد\",\"phone\":\"01012345849\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 3,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [],
+      "predictedKinds": [],
+      "completion": "{\"actions\":[],\"unparsed\":[\"اعمل خصم كبير\"]}"
+    },
+    {
+      "index": 4,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مؤسسة البنيان\",\"clientPhone\":\"01012346929\",\"orderName\":\"مساحة فريق المبيعات\",\"productSku\":\"MEE-0014\",\"quantity\":4,\"supplierName\":\"good line\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 5,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "predictedKinds": [
+        "CREATE_CLIENT"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_CLIENT\",\"name\":\"مؤسسة البنيان\",\"phone\":\"01012345731\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 6,
+      "validJson": true,
+      "actionKindsExact": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE",
+        "ADD_PROJECT_ITEM"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"سارة خالد\",\"clientPhone\":\"01012346889\",\"productSku\":\"EXE-0024\",\"orderQuantity\":\"4\",\"suppliers\":\"good line\",\"productCategory\":\"sales team\",\"orderProductList\":[\"MFG:EXE-0024\"]},{\"kind\":\"ADD_PROJECT_ITEM\",\"projectName\":\"sales team\",\"productSku\":\"EXE-0024\",\"orderQuantity\":\"4\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 7,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "UPDATE_PROJECT_STATUS"
+      ],
+      "predictedKinds": [
+        "UPDATE_PROJECT_STATUS"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"UPDATE_PROJECT_STATUS\",\"projectRef\":\"25\",\"status\":\"READY\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 8,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"أحمد علي\",\"clientPhone\":\"01012347000\",\"clientSku\":\"SOF-0009\",\"productQuantity\":\"3\",\"suppliersName\":\"مصنع mac\",\"suppliersSku\":\"MAC-0009\",\"orderType\":\"SUPPLIER_ORDER\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 9,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"نور أحمد\",\"clientPhone\":\"01012347188\",\"clientSupplier\":\"euro chair\",\"clientProductCode\":\"CHA-MES-0019\",\"clientQuantity\":7,\"projectName\":\"Meeting room\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 10,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "ADD_PROJECT_ITEM"
+      ],
+      "predictedKinds": [
+        "ADD_PROJECT_ITEM"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"ADD_PROJECT_ITEM\",\"projectRef\":\"107\",\"productSku\":\"SOF-0006\",\"quantity\":5}],\"unparsed\":[]}"
+    },
+    {
+      "index": 11,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "UPDATE_PROJECT_STATUS"
+      ],
+      "predictedKinds": [
+        "UPDATE_PROJECT_STATUS"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"UPDATE_PROJECT_STATUS\",\"projectRef\":\"3\",\"status\":\"APPROVED\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 12,
+      "validJson": true,
+      "actionKindsExact": true,
+      "expectedKinds": [
+        "ADD_PROJECT_ITEM"
+      ],
+      "predictedKinds": [
+        "ADD_PROJECT_ITEM"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"ADD_PROJECT_ITEM\",\"projectRef\":\"57\",\"productSku\":\"WOR-0029\",\"quantity\":3}],\"unparsed\":[]}"
+    }
+  ]
+}

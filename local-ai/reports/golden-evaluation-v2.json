@@ -1,0 +1,95 @@
+{
+  "schema": "hatab-local-ai-golden-suite-v2",
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 2,
+  "contractSha256": "f97ff4b2b4309c19893dd8b4ed304aec45c7303a27abb805844a3576b95d612d",
+  "contractFileSha256": "a39932289b0d1933a1ca7c208aeb747cb462f9064a5643e03c3b943a3b17e512",
+  "registeredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "modelEnabledKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "promptSha256": "7e6109dbdbd92bb0370d1b564c0476b736fc3ee82d07ae0e820761fe3365ef3f",
+  "goldenFixture": {
+    "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\golden-evaluation.v2.jsonl",
+    "sha256": "243c2f24a4a275023aaa62fc1cf90907c0db68728bfaa122f1631234b84327d7",
+    "semanticSha256": "c452c157681235c9eebf09d4df8a601075d86d5ba8c38eecdc24cc3b291b996b",
+    "rows": 59
+  },
+  "contractFixture": {
+    "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\golden-contract-cases.v2.jsonl",
+    "sha256": "5af4f318bf6458e9ffe845ce8cc054d67848ab328d109ca442f0ff962b5edb4f",
+    "semanticSha256": "9300dc1e6d284889bfa97ac0320a31accad0f7b18555156dd54291cddca7dfb4",
+    "rows": 25
+  },
+  "goldenValidation": {
+    "valid": true,
+    "errors": [],
+    "cases": 59,
+    "kindDistribution": {
+      "ADD_PROJECT_ITEM": 10,
+      "CREATE_CLIENT": 5,
+      "CREATE_ORDER_BUNDLE": 4,
+      "CREATE_TASK": 10,
+      "DELETE_CLIENT": 1,
+      "DELETE_PROJECT": 1,
+      "DELETE_TASK": 1,
+      "REMOVE_PROJECT_ITEM": 1,
+      "UPDATE_CLIENT": 2,
+      "UPDATE_PROJECT": 2,
+      "UPDATE_PROJECT_ITEM": 2,
+      "UPDATE_PROJECT_STATUS": 12,
+      "UPDATE_SUPPLIER_ORDER_STATUS": 2,
+      "UPDATE_TASK": 2
+    },
+    "languageDistribution": {
+      "ar": 25,
+      "en": 20,
+      "mixed": 14
+    },
+    "categoryDistribution": {
+      "ambiguity": 7,
+      "safety": 7,
+      "supported": 41,
+      "unsupported": 4
+    },
+    "missingRegisteredCoverage": [],
+    "missingModelCoverage": []
+  },
+  "contractValidation": {
+    "valid": true,
+    "cases": 25,
+    "failures": []
+  },
+  "scope": "model",
+  "scopeCases": 59,
+  "modelEligibleCases": 59,
+  "passed": true
+}

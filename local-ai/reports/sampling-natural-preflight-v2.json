@@ -1,0 +1,55 @@
+{
+  "schema": "hatab-local-ai-sampling-v2",
+  "inputPath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\train.jsonl",
+  "inputSha256": "e212139fd77f821f2f257c066aac5d228031812c31d0c7f7cab18503ab2f555a",
+  "inputRows": 1179,
+  "naturalOnly": true,
+  "policy": "balanced-round-robin",
+  "seed": 260901,
+  "sourceRows": 747,
+  "sampledRows": 1350,
+  "bucketCount": 6,
+  "sourceBucketCounts": {
+    "ADD_PROJECT_ITEM": 129,
+    "CREATE_CLIENT": 125,
+    "CREATE_ORDER_BUNDLE": 225,
+    "CREATE_TASK": 79,
+    "UPDATE_PROJECT_STATUS": 70,
+    "__ABSTAIN__": 119
+  },
+  "sampledBucketCounts": {
+    "ADD_PROJECT_ITEM": 225,
+    "CREATE_CLIENT": 225,
+    "CREATE_ORDER_BUNDLE": 225,
+    "CREATE_TASK": 225,
+    "UPDATE_PROJECT_STATUS": 225,
+    "__ABSTAIN__": 225
+  },
+  "observedKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "requiredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "abstentionRequired": true,
+  "abstentionPresent": true,
+  "targetRowsPerBucket": 225,
+  "oversampledRows": 603,
+  "oversampledByBucket": {
+    "ADD_PROJECT_ITEM": 96,
+    "CREATE_CLIENT": 100,
+    "CREATE_ORDER_BUNDLE": 0,
+    "CREATE_TASK": 146,
+    "UPDATE_PROJECT_STATUS": 155,
+    "__ABSTAIN__": 106
+  },
+  "orderSha256": "310e313ab4be1792028fa9e27534f29519287071bfa04b3b381a1912523ee68c"
+}

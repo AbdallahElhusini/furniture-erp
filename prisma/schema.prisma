@@ -1,0 +1,951 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ===========================
+// 1. CLIENTS & PROJECTS
+// ===========================
+
+model Client {
+  id          Int      @id @default(autoincrement())
+  externalKey String?  @unique
+  name        String
+  company     String?
+  phone       String
+  email       String?
+  address     String?
+  notes       String?
+  stage       String   @default("LEAD") // LEAD | QUALIFIED | CUSTOMER | LOST
+  brief       String?
+  source      String?
+  nextFollowUpAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  projects Project[]
+
+  @@index([stage])
+  @@index([nextFollowUpAt])
+}
+
+model Project {
+  id                Int       @id @default(autoincrement())
+  externalKey       String?   @unique
+  clientId          Int
+  title             String
+  type              String    @default("LARGE_PROJECT") // LARGE_PROJECT | SIMPLE_ORDER
+  status            String    @default("LEAD") // LEAD | INSPECTION | DESIGNING | PENDING_APPROVAL | APPROVED | IN_PRODUCTION | READY | INSTALLING | COMPLETED | CANCELLED
+  inspectionDate    DateTime?
+  designDeadline    DateTime?
+  approvalDate      DateTime?
+  estimatedDelivery DateTime?
+  syncDate          DateTime? // Calculated sync date (longest manufacturing time)
+  totalCost         Float     @default(0)
+  totalPrice        Float     @default(0)
+  amountPaid        Float     @default(0)
+  shippingCost      Float     @default(0)
+  installationCost  Float     @default(0)
+  notes             String?
+  priority          String    @default("MEDIUM") // LOW | MEDIUM | HIGH | URGENT
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  client         Client          @relation(fields: [clientId], references: [id])
+  items          ProjectItem[]
+  supplierOrders SupplierOrder[]
+  tasks          Task[]
+  payments       Payment[]
+  financeEntries FinanceEntry[]
+
+  @@index([status])
+  @@index([clientId])
+}
+
+model ProjectItem {
+  id            Int     @id @default(autoincrement())
+  externalKey   String? @unique
+  projectId     Int
+  catalogItemId Int
+  quantity      Int     @default(1)
+  unitCost      Float
+  unitPrice     Float
+  status        String  @default("PENDING") // PENDING | ORDERED | IN_PRODUCTION | READY | DELIVERED | INSTALLED
+  notes         String?
+  leadTimeDays  Int     @default(0)
+
+  project     Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  catalogItem CatalogItem @relation(fields: [catalogItemId], references: [id])
+  orderItems  OrderItem[]
+
+  @@index([projectId])
+}
+
+// ===========================
+// 2. SUPPLIERS & FACTORIES
+// ===========================
+
+model Supplier {
+  id             Int      @id @default(autoincrement())
+  externalKey    String?  @unique
+  name           String
+  contactPerson  String?
+  phone          String
+  email          String?
+  address        String?
+  specialization String? // e.g., "Wood furniture", "Metal", "Upholstery"
+  qualityRating  Int      @default(5) // 1-5
+  deliveryRating Int      @default(5) // 1-5
+  notes          String?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  catalogItems   CatalogItem[]
+  supplierOrders SupplierOrder[]
+}
+
+model SupplierOrder {
+  id                 Int       @id @default(autoincrement())
+  externalKey        String?   @unique
+  supplierId         Int
+  projectId          Int
+  status             String    @default("PENDING") // PENDING | CONFIRMED | IN_PRODUCTION | READY | SHIPPED | DELIVERED
+  orderDate          DateTime  @default(now())
+  expectedDate       DateTime?
+  actualDeliveryDate DateTime?
+  totalAmount        Float     @default(0)
+  amountPaid         Float     @default(0)
+  notes              String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  supplier Supplier    @relation(fields: [supplierId], references: [id])
+  project  Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  items    OrderItem[]
+  financeEntries FinanceEntry[]
+
+  @@index([supplierId])
+  @@index([projectId])
+  @@index([status])
+}
+
+model OrderItem {
+  id              Int     @id @default(autoincrement())
+  externalKey     String? @unique
+  supplierOrderId Int
+  projectItemId   Int
+  quantity        Int     @default(1)
+
+  supplierOrder SupplierOrder @relation(fields: [supplierOrderId], references: [id], onDelete: Cascade)
+  projectItem   ProjectItem   @relation(fields: [projectItemId], references: [id])
+
+  @@unique([supplierOrderId, projectItemId])
+  @@index([supplierOrderId])
+}
+
+// ===========================
+// 3. CATALOG (Products)
+// ===========================
+
+model Category {
+  id        Int     @id @default(autoincrement())
+  parentId  Int?
+  nameAr    String
+  nameEn    String
+  slug      String  @unique
+  image     String?
+  sortOrder Int     @default(0)
+  isActive  Boolean @default(true)
+
+  parent    Category?          @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children  Category[]         @relation("CategoryHierarchy")
+  items     CatalogItem[]
+  families  ProductFamily[]
+  redirects CategoryRedirect[]
+
+  @@index([parentId])
+}
+
+model CategoryRedirect {
+  id         Int      @id @default(autoincrement())
+  fromSlug   String   @unique
+  categoryId Int
+  createdAt  DateTime @default(now())
+
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId])
+}
+
+model Collection {
+  id            Int      @id @default(autoincrement())
+  type          String   @default("STYLE") // STYLE | SET | SPACE | CAMPAIGN
+  nameAr        String
+  nameEn        String
+  slug          String   @unique
+  description   String?
+  descriptionAr String?
+  descriptionEn String?
+  image         String?
+  isDraft       Boolean  @default(true)
+  isActive      Boolean  @default(false)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+
+  items CatalogItem[]
+}
+
+model CatalogItem {
+  id                Int       @id @default(autoincrement())
+  categoryId        Int
+  familyId          Int?
+  supplierId        Int?
+  nameAr            String
+  nameEn            String
+  sku               String    @unique
+  descriptionAr     String?
+  descriptionEn     String?
+  costPrice         Float     @default(0)
+  sellingPrice      Float     @default(0)
+  leadTimeDays      Int       @default(7) // Default manufacturing time
+  dimensions        String? // e.g., "120x60x75 cm"
+  material          String?
+  color             String?
+  images            String    @default("[]") // JSON array of image paths
+  specifications    String? // JSON object
+  isActive          Boolean   @default(true)
+  isFeatured        Boolean   @default(false)
+  displayOrder      Int       @default(0)
+  completenessScore Int       @default(0)
+  contentStatus     String    @default("NEEDS_REVIEW") // NEEDS_REVIEW | READY | VERIFIED
+  lastReviewedAt    DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  category     Category       @relation(fields: [categoryId], references: [id])
+  family       ProductFamily? @relation(fields: [familyId], references: [id], onDelete: SetNull)
+  supplier     Supplier?      @relation(fields: [supplierId], references: [id])
+  collections  Collection[]
+  tags         Tag[]
+  assets       ProductAsset[]
+  projectItems ProjectItem[]
+  quoteItems   QuoteItem[]
+
+  @@index([categoryId])
+  @@index([familyId])
+  @@index([supplierId])
+  @@index([isActive])
+  @@index([displayOrder])
+  @@index([completenessScore])
+  @@index([contentStatus])
+}
+
+model ProductFamily {
+  id           Int      @id @default(autoincrement())
+  categoryId   Int
+  nameAr       String
+  nameEn       String
+  slug         String   @unique
+  sourceKey    String   @unique
+  reviewStatus String   @default("CANDIDATE") // CANDIDATE | APPROVED | REJECTED
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  category Category       @relation(fields: [categoryId], references: [id])
+  items    CatalogItem[]
+  assets   ProductAsset[]
+
+  @@index([categoryId])
+  @@index([reviewStatus])
+}
+
+model ProductAsset {
+  id            Int      @id @default(autoincrement())
+  externalKey   String?  @unique
+  catalogItemId Int?
+  familyId      Int?
+  duplicateOfId Int?
+  url           String
+  mimeType      String?
+  width         Int?
+  height        Int?
+  bytes         Int?
+  checksum      String?
+  role          String   @default("GALLERY") // PRIMARY | GALLERY | DETAIL | LIFESTYLE
+  sortOrder     Int      @default(0)
+  altAr         String?
+  altEn         String?
+  reviewStatus  String   @default("NEEDS_REVIEW")
+  createdAt     DateTime @default(now())
+
+  catalogItem CatalogItem?   @relation(fields: [catalogItemId], references: [id], onDelete: Cascade)
+  family      ProductFamily? @relation(fields: [familyId], references: [id], onDelete: SetNull)
+  duplicateOf ProductAsset?  @relation("AssetDuplicates", fields: [duplicateOfId], references: [id], onDelete: SetNull)
+  duplicates  ProductAsset[] @relation("AssetDuplicates")
+
+  @@unique([catalogItemId, url])
+  @@index([familyId])
+  @@index([checksum])
+  @@index([duplicateOfId])
+}
+
+model TagGroup {
+  id        Int    @id @default(autoincrement())
+  key       String @unique
+  nameAr    String
+  nameEn    String
+  sortOrder Int    @default(0)
+
+  tags Tag[]
+}
+
+model Tag {
+  id        Int    @id @default(autoincrement())
+  groupId   Int
+  slug      String @unique
+  nameAr    String
+  nameEn    String
+  sortOrder Int    @default(0)
+
+  group TagGroup      @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  items CatalogItem[]
+
+  @@index([groupId])
+}
+
+// ===========================
+// 4. LOGISTICS & TECHNICIANS
+// ===========================
+
+model Technician {
+  id             Int      @id @default(autoincrement())
+  externalKey    String?  @unique
+  name           String
+  phone          String
+  specialization String? // e.g., "Assembly", "Electrical", "Carpentry"
+  isAvailable    Boolean  @default(true)
+  dailyRate      Float    @default(0)
+  notes          String?
+  createdAt      DateTime @default(now())
+
+  tasks Task[]
+}
+
+model Task {
+  id           Int      @id @default(autoincrement())
+  externalKey  String?  @unique
+  projectId    Int?
+  technicianId Int?
+  type         String // SUPPLIER_FOLLOWUP | DESIGN | INSTALLATION | DELIVERY | INSPECTION | GENERAL
+  title        String
+  description  String?
+  dueDate      DateTime
+  status       String   @default("TODO") // TODO | IN_PROGRESS | DONE
+  priority     String   @default("MEDIUM") // LOW | MEDIUM | HIGH | URGENT
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  project    Project?    @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  technician Technician? @relation(fields: [technicianId], references: [id], onDelete: SetNull)
+
+  @@index([dueDate])
+  @@index([status])
+  @@index([type])
+}
+
+// ===========================
+// 5. QUOTES (from Website)
+// ===========================
+
+model QuoteRequest {
+  id            Int      @id @default(autoincrement())
+  externalKey   String?  @unique
+  clientName    String
+  clientEmail   String?
+  clientPhone   String
+  company       String?
+  message       String?
+  status        String   @default("NEW") // NEW | CONTACTED | QUOTED | CONVERTED | REJECTED
+  totalEstimate Float    @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  items QuoteItem[]
+
+  @@index([status])
+}
+
+model QuoteItem {
+  id            Int     @id @default(autoincrement())
+  externalKey   String? @unique
+  quoteId       Int
+  catalogItemId Int
+  quantity      Int     @default(1)
+
+  quote       QuoteRequest @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  catalogItem CatalogItem  @relation(fields: [catalogItemId], references: [id])
+
+  @@index([quoteId])
+}
+
+// ===========================
+// 6. PORTFOLIO
+// ===========================
+
+model PortfolioProject {
+  id            Int      @id @default(autoincrement())
+  externalKey   String?  @unique
+  titleAr       String
+  titleEn       String
+  descriptionAr String?
+  descriptionEn String?
+  clientName    String?
+  location      String?
+  images        String   @default("[]") // JSON array
+  isFeatured    Boolean  @default(false)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+}
+
+// ===========================
+// 7. PAYMENTS
+// ===========================
+
+model Payment {
+  id          Int      @id @default(autoincrement())
+  externalKey String?  @unique
+  projectId   Int
+  amount      Float
+  method      String   @default("CASH") // CASH | BANK_TRANSFER | CHECK
+  notes       String?
+  date        DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+/// Outgoing supplier payments and operating cash movements. Client receipts
+/// remain in Payment; these records never duplicate a customer receipt.
+model FinanceEntry {
+  id              Int       @id @default(autoincrement())
+  externalKey     String?   @unique
+  kind            String    // SUPPLIER_PAYMENT | EXPENSE | OTHER_INCOME
+  amount          Float
+  method          String    @default("CASH")
+  date            DateTime  @default(now())
+  description     String
+  category        String?
+  notes           String?
+  projectId       Int?
+  supplierOrderId Int?
+  status          String    @default("POSTED") // POSTED | VOID
+  voidReason      String?
+  revision        Int       @default(1)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  project       Project?       @relation(fields: [projectId], references: [id], onDelete: Restrict)
+  supplierOrder SupplierOrder? @relation(fields: [supplierOrderId], references: [id], onDelete: Restrict)
+
+  @@index([date])
+  @@index([kind, status])
+  @@index([projectId])
+  @@index([supplierOrderId])
+}
+
+// ===========================
+// 8. USERS (Admin)
+// ===========================
+
+model User {
+  id                 Int       @id @default(autoincrement())
+  name               String
+  email              String    @unique
+  password           String
+  role               String    @default("ADMIN") // ADMIN | MANAGER | DESIGNER | TECHNICIAN
+  isActive           Boolean   @default(true)
+  mustChangePassword Boolean   @default(true)
+  sessionVersion     Int       @default(1)
+  passwordChangedAt  DateTime?
+  createdAt          DateTime  @default(now())
+}
+
+// ===========================
+// 9. SETTINGS
+// ===========================
+
+model Setting {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+}
+
+// ===========================
+// 10. DATA TRANSFER & WEBSITE CONTENT
+// ===========================
+
+model DataTransferJob {
+  id             Int       @id @default(autoincrement())
+  schemaVersion  Int       @default(1)
+  kind           String // IMPORT | EXPORT | BACKUP | RESTORE
+  scope          String // MODULE | OPERATIONS | CATALOG | FULL | CONTENT
+  module         String?
+  fileName       String?
+  sourceHash     String?
+  idempotencyKey String?   @unique
+  status         String    @default("PENDING") // PENDING | VALIDATING | SUCCESS | FAILED
+  dryRun         Boolean   @default(false)
+  rowCount       Int       @default(0)
+  insertedCount  Int       @default(0)
+  updatedCount   Int       @default(0)
+  skippedCount   Int       @default(0)
+  errorCount     Int       @default(0)
+  errors         String    @default("[]") // JSON validation/application errors
+  summary        String    @default("{}") // JSON per-module counts and metadata
+  actorId        Int?
+  actorEmail     String?
+  resultName     String?
+  startedAt      DateTime  @default(now())
+  createdAt      DateTime  @default(now())
+  completedAt    DateTime?
+
+  issues  DataTransferIssue[]
+  changes DataChangeAudit[]
+
+  @@index([kind, status])
+  @@index([sourceHash])
+  @@index([createdAt])
+}
+
+model DataTransferIssue {
+  id        Int      @id @default(autoincrement())
+  jobId     Int
+  module    String
+  sheet     String?
+  rowNumber Int?
+  field     String?
+  severity  String   @default("ERROR") // ERROR | WARNING
+  code      String
+  message   String
+  rawData   String?
+  createdAt DateTime @default(now())
+
+  job DataTransferJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId, severity])
+  @@index([module, code])
+}
+
+model DataChangeAudit {
+  id         Int      @id @default(autoincrement())
+  jobId      Int
+  module     String
+  recordKey  String
+  action     String // INSERT | UPDATE | DELETE | RESTORE
+  beforeData String?
+  afterData  String?
+  actorId    Int?
+  actorEmail String?
+  createdAt  DateTime @default(now())
+
+  job DataTransferJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId, module])
+  @@index([module, recordKey])
+}
+
+model SiteContent {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  group     String
+  type      String   @default("TEXT") // TEXT | TEXTAREA | LINK | IMAGE | VIDEO | BANNER
+  label     String
+  valueAr   String?
+  valueEn   String?
+  mediaUrl  String?
+  altAr     String?
+  altEn     String?
+  linkUrl   String?
+  metadata  String? // JSON for slot-specific presentation options
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([group, sortOrder])
+  @@index([type])
+  @@index([isActive])
+}
+
+// ===========================
+// 11. FIRST-PARTY STOREFRONT ANALYTICS
+// ===========================
+
+/// Anonymous, first-party visit identity. It deliberately contains no IP
+/// address, fingerprint, contact details, or full referrer URL.
+model AnalyticsSession {
+  id             String    @id
+  startedAt      DateTime  @default(now())
+  lastSeenAt     DateTime  @default(now())
+  landingPath    String
+  lastPath       String
+  referrerHost   String?
+  language       String?
+  deviceType     String?
+  campaignSource String?
+  campaignMedium String?
+  campaignName   String?
+  eventCount     Int       @default(0)
+  convertedAt    DateTime?
+
+  events AnalyticsEvent[]
+
+  @@index([startedAt])
+  @@index([lastSeenAt])
+  @@index([convertedAt])
+}
+
+/// A small allow-listed behavioral event. `metadata` is validated and may
+/// only contain non-sensitive counters/identifiers (never form field values).
+model AnalyticsEvent {
+  id         Int      @id @default(autoincrement())
+  sessionId  String
+  name       String
+  path       String
+  section    String?
+  entityType String?
+  entityId   String?
+  metadata   String   @default("{}")
+  occurredAt DateTime
+  createdAt  DateTime @default(now())
+
+  session AnalyticsSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, occurredAt])
+  @@index([name, occurredAt])
+  @@index([path, occurredAt])
+  @@index([section, occurredAt])
+}
+
+// ===========================
+// 12. AI OPERATIONS CONTROL PLANE
+// ===========================
+
+/// A durable assistant workspace. Conversations are archived instead of being
+/// deleted during normal operation so their execution history remains auditable.
+model AiConversation {
+  id            Int      @id @default(autoincrement())
+  publicId      String   @unique @default(cuid())
+  title         String?
+  locale        String   @default("ar")
+  status        String   @default("ACTIVE") // ACTIVE | ARCHIVED | CLOSED
+  actorId       Int?
+  actorEmail    String?
+  metadata      String   @default("{}") // Redacted JSON only
+  lastMessageAt DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  messages AiMessage[]
+  runs     AiRun[]
+  feedback AiFeedback[]
+
+  @@index([actorId, status])
+  @@index([status, lastMessageAt])
+}
+
+/// A user, assistant, system, or tool-facing message. `contentRedacted` is the
+/// only form that may later be considered for evaluation or training exports.
+model AiMessage {
+  id              Int      @id @default(autoincrement())
+  conversationId  Int
+  runId           Int?
+  role            String // USER | ASSISTANT | SYSTEM | TOOL
+  content         String
+  contentRedacted String?
+  attachments     String   @default("[]") // JSON attachment descriptors
+  metadata        String   @default("{}") // Redacted JSON only
+  actorId         Int?
+  actorEmail      String?
+  createdAt       DateTime @default(now())
+
+  conversation  AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  run           AiRun?         @relation("AiRunOutputMessages", fields: [runId], references: [id], onDelete: SetNull)
+  triggeredRuns AiRun[]        @relation("AiRunTriggerMessage")
+  feedback      AiFeedback[]
+
+  @@index([conversationId, createdAt])
+  @@index([runId, createdAt])
+}
+
+/// A versioned local model/runtime deployment. Rows are append-only in normal
+/// operation; activation and retirement timestamps preserve rollback history.
+model AiModelVersion {
+  id                Int       @id @default(autoincrement())
+  key               String    @unique
+  displayName       String
+  provider          String    @default("LOCAL")
+  baseModel         String
+  adapter           String?
+  quantization      String?
+  runtime           String
+  artifactPath      String?
+  artifactChecksum  String?
+  promptVersion     String
+  toolSchemaVersion String
+  evaluationMetrics String    @default("{}") // Redacted JSON metrics and gates
+  status            String    @default("STAGED") // STAGED | CANARY | ACTIVE | RETIRED | FAILED
+  isActive          Boolean   @default(false)
+  activatedAt       DateTime?
+  retiredAt         DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  runs AiRun[]
+
+  @@index([status, isActive])
+  @@index([baseModel])
+}
+
+/// One bounded orchestration attempt. A run may be preview-only or explicitly
+/// approved for execution, but the model never writes to ERP tables directly.
+model AiRun {
+  id                Int       @id @default(autoincrement())
+  publicId          String    @unique @default(cuid())
+  conversationId    Int
+  triggerMessageId  Int?
+  modelVersionId    Int?
+  status            String    @default("QUEUED") // QUEUED | PLANNING | WAITING_INPUT | WAITING_APPROVAL | EXECUTING | SUCCEEDED | FAILED | CANCELLED
+  mode              String    @default("PREVIEW") // READ_ONLY | PREVIEW | EXECUTE
+  intent            String?
+  inputHash         String?
+  inputSnapshot     String    @default("{}") // Redacted JSON only
+  schemaVersion     Int       @default(1)
+  toolSchemaVersion String    @default("v1")
+  policyVersion     String    @default("v1")
+  retrievalVersion  String?
+  maxSteps          Int       @default(12)
+  riskLevel         String    @default("LOW") // LOW | MEDIUM | HIGH | CRITICAL
+  requiresApproval  Boolean   @default(false)
+  resultSummary     String?
+  usage             String    @default("{}") // JSON latency/token/tool counters
+  errorCode         String?
+  errorMessage      String?
+  startedAt         DateTime?
+  completedAt       DateTime?
+  cancelledAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  conversation    AiConversation     @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  triggerMessage  AiMessage?         @relation("AiRunTriggerMessage", fields: [triggerMessageId], references: [id], onDelete: SetNull)
+  modelVersion    AiModelVersion?    @relation(fields: [modelVersionId], references: [id], onDelete: SetNull)
+  outputMessages  AiMessage[]        @relation("AiRunOutputMessages")
+  plans           AiPlan[]
+  steps           AiStep[]
+  approvals       AiApproval[]
+  policyDecisions AiPolicyDecision[]
+  feedback        AiFeedback[]
+
+  @@index([conversationId, createdAt])
+  @@index([status, createdAt])
+  @@index([modelVersionId])
+  @@index([riskLevel, requiresApproval])
+}
+
+/// A revisioned, deterministic execution proposal. `planHash` binds approval
+/// to the exact normalized plan rather than to mutable UI text.
+model AiPlan {
+  id               Int       @id @default(autoincrement())
+  runId            Int
+  revision         Int       @default(1)
+  status           String    @default("DRAFT") // DRAFT | READY | APPROVED | REJECTED | SUPERSEDED | EXECUTING | COMPLETED | FAILED
+  summary          String?
+  rationale        String?
+  actions          String    @default("[]") // Versioned JSON action graph
+  assumptions      String    @default("[]")
+  warnings         String    @default("[]")
+  planHash         String
+  supersedesPlanId Int?
+  approvedAt       DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  run        AiRun        @relation(fields: [runId], references: [id], onDelete: Cascade)
+  supersedes AiPlan?      @relation("AiPlanRevisions", fields: [supersedesPlanId], references: [id], onDelete: SetNull)
+  revisions  AiPlan[]     @relation("AiPlanRevisions")
+  steps      AiStep[]
+  approvals  AiApproval[]
+
+  @@unique([runId, revision])
+  @@index([runId, status])
+  @@index([supersedesPlanId])
+}
+
+/// A resumable unit in an approved plan. Idempotency keys prevent accidental
+/// duplicate writes when workers retry after a timeout or restart.
+model AiStep {
+  id               Int       @id @default(autoincrement())
+  runId            Int
+  planId           Int?
+  sequence         Int
+  key              String
+  kind             String
+  title            String
+  status           String    @default("PENDING") // PENDING | BLOCKED | READY | RUNNING | SUCCEEDED | FAILED | SKIPPED | CANCELLED
+  toolName         String?
+  riskLevel        String    @default("LOW")
+  requiresApproval Boolean   @default(false)
+  dependsOn        String    @default("[]") // JSON array of step keys
+  input            String    @default("{}") // Validated, redacted JSON
+  output           String?
+  errorCode        String?
+  errorMessage     String?
+  attemptCount     Int       @default(0)
+  maxAttempts      Int       @default(1)
+  idempotencyKey   String?   @unique
+  startedAt        DateTime?
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  run             AiRun              @relation(fields: [runId], references: [id], onDelete: Cascade)
+  plan            AiPlan?            @relation(fields: [planId], references: [id], onDelete: SetNull)
+  toolCalls       AiToolCall[]
+  approvals       AiApproval[]
+  policyDecisions AiPolicyDecision[]
+
+  @@unique([runId, sequence])
+  @@unique([runId, key])
+  @@index([planId, status])
+  @@index([status, toolName])
+}
+
+/// An immutable attempt to call one typed tool. Arguments and results must be
+/// redacted before persistence; write tools also require an idempotency key.
+model AiToolCall {
+  id                Int       @id @default(autoincrement())
+  stepId            Int
+  sequence          Int       @default(1)
+  toolName          String
+  toolSchemaVersion String
+  operation         String    @default("READ") // READ | WRITE | EXTERNAL
+  status            String    @default("PENDING") // PENDING | RUNNING | SUCCEEDED | FAILED | DENIED | CANCELLED
+  arguments         String    @default("{}")
+  result            String?
+  errorCode         String?
+  errorMessage      String?
+  permissionScope   String?
+  riskLevel         String    @default("LOW")
+  idempotencyKey    String?   @unique
+  durationMs        Int?
+  startedAt         DateTime?
+  completedAt       DateTime?
+  createdAt         DateTime  @default(now())
+
+  step            AiStep             @relation(fields: [stepId], references: [id], onDelete: Cascade)
+  approvals       AiApproval[]
+  policyDecisions AiPolicyDecision[]
+
+  @@unique([stepId, sequence])
+  @@index([toolName, status])
+  @@index([status, startedAt])
+}
+
+/// A human authorization request tied to exact run/plan/step/tool snapshots.
+/// Historical actor fields are snapshots so audit data survives user changes.
+model AiApproval {
+  id               Int       @id @default(autoincrement())
+  runId            Int
+  planId           Int?
+  stepId           Int?
+  toolCallId       Int?
+  status           String    @default("PENDING") // PENDING | APPROVED | REJECTED | EXPIRED | CANCELLED
+  scope            String
+  riskLevel        String
+  requiredRole     String?
+  requestedById    Int?
+  requestedByEmail String?
+  requestSnapshot  String    @default("{}") // Exact redacted approval payload
+  decisionReason   String?
+  decidedById      Int?
+  decidedByEmail   String?
+  requestedAt      DateTime  @default(now())
+  decidedAt        DateTime?
+  expiresAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  run      AiRun       @relation(fields: [runId], references: [id], onDelete: Cascade)
+  plan     AiPlan?     @relation(fields: [planId], references: [id], onDelete: SetNull)
+  step     AiStep?     @relation(fields: [stepId], references: [id], onDelete: SetNull)
+  toolCall AiToolCall? @relation(fields: [toolCallId], references: [id], onDelete: SetNull)
+
+  @@index([runId, status])
+  @@index([status, expiresAt])
+  @@index([planId])
+  @@index([stepId])
+  @@index([toolCallId])
+}
+
+/// The output of a programmatic policy rule. Keeping denials as first-class
+/// rows makes authorization failures observable without relying on app logs.
+model AiPolicyDecision {
+  id               Int      @id @default(autoincrement())
+  runId            Int
+  stepId           Int?
+  toolCallId       Int?
+  policyKey        String
+  policyVersion    String
+  effect           String // ALLOW | DENY | REQUIRE_APPROVAL
+  reason           String
+  evaluationInput  String   @default("{}") // Redacted JSON facts
+  evaluationOutput String   @default("{}") // Redacted JSON matched rules
+  evaluator        String   @default("PROGRAMMATIC")
+  createdAt        DateTime @default(now())
+
+  run      AiRun       @relation(fields: [runId], references: [id], onDelete: Cascade)
+  step     AiStep?     @relation(fields: [stepId], references: [id], onDelete: SetNull)
+  toolCall AiToolCall? @relation(fields: [toolCallId], references: [id], onDelete: SetNull)
+
+  @@index([runId, createdAt])
+  @@index([policyKey, effect])
+  @@index([stepId])
+  @@index([toolCallId])
+}
+
+/// Human correction and outcome feedback. Nothing enters a tuning dataset
+/// until `isTrainingApproved` is explicitly set with an approving actor.
+model AiFeedback {
+  id                 Int       @id @default(autoincrement())
+  conversationId     Int
+  runId              Int?
+  messageId          Int?
+  rating             Int?
+  category           String?
+  comment            String?
+  correction         String?
+  isTrainingApproved Boolean   @default(false)
+  approvedById       Int?
+  approvedByEmail    String?
+  approvedAt         DateTime?
+  actorId            Int?
+  actorEmail         String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  conversation AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  run          AiRun?         @relation(fields: [runId], references: [id], onDelete: SetNull)
+  message      AiMessage?     @relation(fields: [messageId], references: [id], onDelete: SetNull)
+
+  @@index([conversationId, createdAt])
+  @@index([runId])
+  @@index([messageId])
+  @@index([isTrainingApproved, createdAt])
+}

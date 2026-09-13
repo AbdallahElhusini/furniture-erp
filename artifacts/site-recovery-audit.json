@@ -1,0 +1,1689 @@
+{
+  "generatedAt": "2026-09-13T11:48:33.988Z",
+  "currentPath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\dev.db",
+  "baselinePath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\backups\\migrations\\pre-analytics-2026-08-28T19-16-57-898Z.db",
+  "integrity": [
+    {
+      "integrity_check": "ok"
+    }
+  ],
+  "counts": {
+    "currentCatalogItems": 533,
+    "baselineCatalogItems": 597,
+    "currentActiveItems": 423,
+    "currentVerifiedItems": 423,
+    "currentAssets": 530,
+    "currentApprovedAssets": 521,
+    "missingCatalogItems": 66,
+    "missingItemsFullyPreserved": 27,
+    "missingAssetRefs": 81,
+    "activeMissingAssetRefs": 0,
+    "missingFiles": 0,
+    "activeMissingFiles": 0,
+    "orphanedAssetLinks": 8,
+    "malformedImageJson": 0,
+    "currentProjectItems": 4,
+    "baselineProjectItems": 0,
+    "currentQuoteItems": 7,
+    "baselineQuoteItems": 6
+  },
+  "missingCatalogItems": [
+    {
+      "id": 50,
+      "sku": "CAB-0022",
+      "nameAr": "منتج CAB-0022",
+      "nameEn": "Product CAB-0022",
+      "images": [
+        "/uploads/catalog/CAB-0022.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 49,
+          "sku": "CAB-0021",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        49
+      ]
+    },
+    {
+      "id": 63,
+      "sku": "CAB-0035",
+      "nameAr": "منتج CAB-0035",
+      "nameEn": "Product CAB-0035",
+      "images": [
+        "/uploads/catalog/CAB-0035.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 59,
+          "sku": "CAB-0031",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        59
+      ]
+    },
+    {
+      "id": 87,
+      "sku": "CHA-CON-0004",
+      "nameAr": "منتج CHA-CON-0004",
+      "nameEn": "Product CHA-CON-0004",
+      "images": [
+        "/uploads/catalog/CHA-CON-0004.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 84,
+          "sku": "CHA-CON-0001",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        84
+      ]
+    },
+    {
+      "id": 88,
+      "sku": "CHA-CON-0005",
+      "nameAr": "منتج CHA-CON-0005",
+      "nameEn": "Product CHA-CON-0005",
+      "images": [
+        "/uploads/catalog/CHA-CON-0005.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 85,
+          "sku": "CHA-CON-0002",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        85
+      ]
+    },
+    {
+      "id": 89,
+      "sku": "CHA-CON-0006",
+      "nameAr": "منتج CHA-CON-0006",
+      "nameEn": "Product CHA-CON-0006",
+      "images": [
+        "/uploads/catalog/CHA-CON-0006.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 86,
+          "sku": "CHA-CON-0003",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        86
+      ]
+    },
+    {
+      "id": 90,
+      "sku": "CHA-CON-0007",
+      "nameAr": "منتج CHA-CON-0007",
+      "nameEn": "Product CHA-CON-0007",
+      "images": [
+        "/uploads/catalog/CHA-CON-0007.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 84,
+          "sku": "CHA-CON-0001",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        84
+      ]
+    },
+    {
+      "id": 91,
+      "sku": "CHA-CON-0008",
+      "nameAr": "منتج CHA-CON-0008",
+      "nameEn": "Product CHA-CON-0008",
+      "images": [
+        "/uploads/catalog/CHA-CON-0008.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 85,
+          "sku": "CHA-CON-0002",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        85
+      ]
+    },
+    {
+      "id": 92,
+      "sku": "CHA-CON-0009",
+      "nameAr": "منتج CHA-CON-0009",
+      "nameEn": "Product CHA-CON-0009",
+      "images": [
+        "/uploads/catalog/CHA-CON-0009.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 86,
+          "sku": "CHA-CON-0003",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        86
+      ]
+    },
+    {
+      "id": 99,
+      "sku": "CHA-CON-0016",
+      "nameAr": "منتج CHA-CON-0016",
+      "nameEn": "Product CHA-CON-0016",
+      "images": [
+        "/uploads/catalog/CHA-CON-0016.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 96,
+          "sku": "CHA-CON-0013",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        96
+      ]
+    },
+    {
+      "id": 100,
+      "sku": "CHA-CON-0017",
+      "nameAr": "منتج CHA-CON-0017",
+      "nameEn": "Product CHA-CON-0017",
+      "images": [
+        "/uploads/catalog/CHA-CON-0017.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 97,
+          "sku": "CHA-CON-0014",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        97
+      ]
+    },
+    {
+      "id": 113,
+      "sku": "CHA-CON-0030",
+      "nameAr": "منتج CHA-CON-0030",
+      "nameEn": "Product CHA-CON-0030",
+      "images": [
+        "/uploads/catalog/CHA-CON-0030.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 112,
+          "sku": "CHA-CON-0029",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        112
+      ]
+    },
+    {
+      "id": 114,
+      "sku": "CHA-CON-0031",
+      "nameAr": "منتج CHA-CON-0031",
+      "nameEn": "Product CHA-CON-0031",
+      "images": [
+        "/uploads/catalog/CHA-CON-0031.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 112,
+          "sku": "CHA-CON-0029",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        112
+      ]
+    },
+    {
+      "id": 123,
+      "sku": "CHA-CON-0040",
+      "nameAr": "منتج CHA-CON-0040",
+      "nameEn": "Product CHA-CON-0040",
+      "images": [
+        "/uploads/catalog/CHA-CON-0040.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 122,
+          "sku": "CHA-CON-0039",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        122
+      ]
+    },
+    {
+      "id": 124,
+      "sku": "CHA-CON-0041",
+      "nameAr": "منتج CHA-CON-0041",
+      "nameEn": "Product CHA-CON-0041",
+      "images": [
+        "/uploads/catalog/CHA-CON-0041.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 122,
+          "sku": "CHA-CON-0039",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        122
+      ]
+    },
+    {
+      "id": 125,
+      "sku": "CHA-CON-0042",
+      "nameAr": "منتج CHA-CON-0042",
+      "nameEn": "Product CHA-CON-0042",
+      "images": [
+        "/uploads/catalog/CHA-CON-0042.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 122,
+          "sku": "CHA-CON-0039",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        122
+      ]
+    },
+    {
+      "id": 128,
+      "sku": "CHA-CON-0045",
+      "nameAr": "منتج CHA-CON-0045",
+      "nameEn": "Product CHA-CON-0045",
+      "images": [
+        "/uploads/catalog/CHA-CON-0045.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 129,
+      "sku": "CHA-CON-0046",
+      "nameAr": "منتج CHA-CON-0046",
+      "nameEn": "Product CHA-CON-0046",
+      "images": [
+        "/uploads/catalog/CHA-CON-0046.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 130,
+      "sku": "CHA-CON-0047",
+      "nameAr": "منتج CHA-CON-0047",
+      "nameEn": "Product CHA-CON-0047",
+      "images": [
+        "/uploads/catalog/CHA-CON-0047.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 131,
+      "sku": "CHA-CON-0048",
+      "nameAr": "منتج CHA-CON-0048",
+      "nameEn": "Product CHA-CON-0048",
+      "images": [
+        "/uploads/catalog/CHA-CON-0048.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 132,
+      "sku": "CHA-CON-0049",
+      "nameAr": "منتج CHA-CON-0049",
+      "nameEn": "Product CHA-CON-0049",
+      "images": [
+        "/uploads/catalog/CHA-CON-0049.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 133,
+      "sku": "CHA-CON-0050",
+      "nameAr": "منتج CHA-CON-0050",
+      "nameEn": "Product CHA-CON-0050",
+      "images": [
+        "/uploads/catalog/CHA-CON-0050.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 134,
+      "sku": "CHA-CON-0051",
+      "nameAr": "منتج CHA-CON-0051",
+      "nameEn": "Product CHA-CON-0051",
+      "images": [
+        "/uploads/catalog/CHA-CON-0051.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 135,
+      "sku": "CHA-CON-0052",
+      "nameAr": "منتج CHA-CON-0052",
+      "nameEn": "Product CHA-CON-0052",
+      "images": [
+        "/uploads/catalog/CHA-CON-0052.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 136,
+      "sku": "CHA-CON-0053",
+      "nameAr": "منتج CHA-CON-0053",
+      "nameEn": "Product CHA-CON-0053",
+      "images": [
+        "/uploads/catalog/CHA-CON-0053.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 138,
+      "sku": "CHA-COU-0002",
+      "nameAr": "منتج CHA-COU-0002",
+      "nameEn": "Product CHA-COU-0002",
+      "images": [
+        "/uploads/catalog/CHA-COU-0002.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 137,
+          "sku": "CHA-COU-0001",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        137
+      ]
+    },
+    {
+      "id": 139,
+      "sku": "CHA-COU-0003",
+      "nameAr": "منتج CHA-COU-0003",
+      "nameEn": "Product CHA-COU-0003",
+      "images": [
+        "/uploads/catalog/CHA-COU-0003.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 137,
+          "sku": "CHA-COU-0001",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        137
+      ]
+    },
+    {
+      "id": 140,
+      "sku": "CHA-COU-0004",
+      "nameAr": "منتج CHA-COU-0004",
+      "nameEn": "Product CHA-COU-0004",
+      "images": [
+        "/uploads/catalog/CHA-COU-0004.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 137,
+          "sku": "CHA-COU-0001",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        137
+      ]
+    },
+    {
+      "id": 143,
+      "sku": "CHA-MES-0003",
+      "nameAr": "منتج CHA-MES-0003",
+      "nameEn": "Product CHA-MES-0003",
+      "images": [
+        "/uploads/catalog/CHA-MES-0003.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 142,
+          "sku": "CHA-MES-0002",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        142
+      ]
+    },
+    {
+      "id": 145,
+      "sku": "CHA-MES-0005",
+      "nameAr": "منتج CHA-MES-0005",
+      "nameEn": "Product CHA-MES-0005",
+      "images": [
+        "/uploads/catalog/CHA-MES-0005.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 144,
+          "sku": "CHA-MES-0004",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        144
+      ]
+    },
+    {
+      "id": 146,
+      "sku": "CHA-MES-0006",
+      "nameAr": "منتج CHA-MES-0006",
+      "nameEn": "Product CHA-MES-0006",
+      "images": [
+        "/uploads/catalog/CHA-MES-0006.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 144,
+          "sku": "CHA-MES-0004",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        144
+      ]
+    },
+    {
+      "id": 148,
+      "sku": "CHA-MES-0008",
+      "nameAr": "منتج CHA-MES-0008",
+      "nameEn": "Product CHA-MES-0008",
+      "images": [
+        "/uploads/catalog/CHA-MES-0008.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 147,
+          "sku": "CHA-MES-0007",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        147
+      ]
+    },
+    {
+      "id": 149,
+      "sku": "CHA-MES-0009",
+      "nameAr": "منتج CHA-MES-0009",
+      "nameEn": "Product CHA-MES-0009",
+      "images": [
+        "/uploads/catalog/CHA-MES-0009.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 147,
+          "sku": "CHA-MES-0007",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        147
+      ]
+    },
+    {
+      "id": 151,
+      "sku": "CHA-MES-0011",
+      "nameAr": "منتج CHA-MES-0011",
+      "nameEn": "Product CHA-MES-0011",
+      "images": [
+        "/uploads/catalog/CHA-MES-0011.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 150,
+          "sku": "CHA-MES-0010",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        150
+      ]
+    },
+    {
+      "id": 152,
+      "sku": "CHA-MES-0012",
+      "nameAr": "منتج CHA-MES-0012",
+      "nameEn": "Product CHA-MES-0012",
+      "images": [
+        "/uploads/catalog/CHA-MES-0012.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 150,
+          "sku": "CHA-MES-0010",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        150
+      ]
+    },
+    {
+      "id": 154,
+      "sku": "CHA-MES-0014",
+      "nameAr": "منتج CHA-MES-0014",
+      "nameEn": "Product CHA-MES-0014",
+      "images": [
+        "/uploads/catalog/CHA-MES-0014.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 153,
+          "sku": "CHA-MES-0013",
+          "active": false,
+          "overlap": 1,
+          "sourceImageCount": 1
+        },
+        {
+          "id": 156,
+          "sku": "CHA-MES-0016",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        153,
+        156
+      ]
+    },
+    {
+      "id": 155,
+      "sku": "CHA-MES-0015",
+      "nameAr": "منتج CHA-MES-0015",
+      "nameEn": "Product CHA-MES-0015",
+      "images": [
+        "/uploads/catalog/CHA-MES-0015.png"
+      ],
+      "candidateOwners": [
+        {
+          "id": 153,
+          "sku": "CHA-MES-0013",
+          "active": false,
+          "overlap": 1,
+          "sourceImageCount": 1
+        },
+        {
+          "id": 156,
+          "sku": "CHA-MES-0016",
+          "active": true,
+          "overlap": 1,
+          "sourceImageCount": 1
+        }
+      ],
+      "fullyPreservedIn": [
+        153,
+        156
+      ]
+    },
+    {
+      "id": 199,
+      "sku": "CHA-MES-0059",
+      "nameAr": "منتج CHA-MES-0059",
+      "nameEn": "Product CHA-MES-0059",
+      "images": [
+        "/uploads/catalog/CHA-MES-0059.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 200,
+      "sku": "CHA-MES-0060",
+      "nameAr": "منتج CHA-MES-0060",
+      "nameEn": "Product CHA-MES-0060",
+      "images": [
+        "/uploads/catalog/CHA-MES-0060.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 201,
+      "sku": "CHA-MES-0061",
+      "nameAr": "منتج CHA-MES-0061",
+      "nameEn": "Product CHA-MES-0061",
+      "images": [
+        "/uploads/catalog/CHA-MES-0061.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 202,
+      "sku": "CHA-MES-0062",
+      "nameAr": "منتج CHA-MES-0062",
+      "nameEn": "Product CHA-MES-0062",
+      "images": [
+        "/uploads/catalog/CHA-MES-0062.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 203,
+      "sku": "CHA-MES-0063",
+      "nameAr": "منتج CHA-MES-0063",
+      "nameEn": "Product CHA-MES-0063",
+      "images": [
+        "/uploads/catalog/CHA-MES-0063.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 256,
+      "sku": "CHA-WAI-0007",
+      "nameAr": "منتج CHA-WAI-0007",
+      "nameEn": "Product CHA-WAI-0007",
+      "images": [
+        "/uploads/catalog/CHA-WAI-0007.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 257,
+      "sku": "CHA-WAI-0008",
+      "nameAr": "منتج CHA-WAI-0008",
+      "nameEn": "Product CHA-WAI-0008",
+      "images": [
+        "/uploads/catalog/CHA-WAI-0008.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 258,
+      "sku": "CHA-WAI-0009",
+      "nameAr": "منتج CHA-WAI-0009",
+      "nameEn": "Product CHA-WAI-0009",
+      "images": [
+        "/uploads/catalog/CHA-WAI-0009.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 259,
+      "sku": "CHA-WAI-0010",
+      "nameAr": "منتج CHA-WAI-0010",
+      "nameEn": "Product CHA-WAI-0010",
+      "images": [
+        "/uploads/catalog/CHA-WAI-0010.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 278,
+      "sku": "COU-0019",
+      "nameAr": "منتج COU-0019",
+      "nameEn": "Product COU-0019",
+      "images": [
+        "/uploads/catalog/COU-0019.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 279,
+      "sku": "COU-0020",
+      "nameAr": "منتج COU-0020",
+      "nameEn": "Product COU-0020",
+      "images": [
+        "/uploads/catalog/COU-0020.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 280,
+      "sku": "COU-0021",
+      "nameAr": "منتج COU-0021",
+      "nameEn": "Product COU-0021",
+      "images": [
+        "/uploads/catalog/COU-0021.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 281,
+      "sku": "COU-0022",
+      "nameAr": "منتج COU-0022",
+      "nameEn": "Product COU-0022",
+      "images": [
+        "/uploads/catalog/COU-0022.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 282,
+      "sku": "COU-0023",
+      "nameAr": "منتج COU-0023",
+      "nameEn": "Product COU-0023",
+      "images": [
+        "/uploads/catalog/COU-0023.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 283,
+      "sku": "COU-0024",
+      "nameAr": "منتج COU-0024",
+      "nameEn": "Product COU-0024",
+      "images": [
+        "/uploads/catalog/COU-0024.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 284,
+      "sku": "COU-0025",
+      "nameAr": "منتج COU-0025",
+      "nameEn": "Product COU-0025",
+      "images": [
+        "/uploads/catalog/COU-0025.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 285,
+      "sku": "COU-0026",
+      "nameAr": "منتج COU-0026",
+      "nameEn": "Product COU-0026",
+      "images": [
+        "/uploads/catalog/COU-0026.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 286,
+      "sku": "COU-0027",
+      "nameAr": "منتج COU-0027",
+      "nameEn": "Product COU-0027",
+      "images": [
+        "/uploads/catalog/COU-0027.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 287,
+      "sku": "COU-0028",
+      "nameAr": "منتج COU-0028",
+      "nameEn": "Product COU-0028",
+      "images": [
+        "/uploads/catalog/COU-0028.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 298,
+      "sku": "COU-0039",
+      "nameAr": "منتج COU-0039",
+      "nameEn": "Product COU-0039",
+      "images": [
+        "/uploads/catalog/COU-0039.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 299,
+      "sku": "COU-0040",
+      "nameAr": "منتج COU-0040",
+      "nameEn": "Product COU-0040",
+      "images": [
+        "/uploads/catalog/COU-0040.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 300,
+      "sku": "COU-0041",
+      "nameAr": "منتج COU-0041",
+      "nameEn": "Product COU-0041",
+      "images": [
+        "/uploads/catalog/COU-0041.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 301,
+      "sku": "COU-0042",
+      "nameAr": "منتج COU-0042",
+      "nameEn": "Product COU-0042",
+      "images": [
+        "/uploads/catalog/COU-0042.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 302,
+      "sku": "COU-0043",
+      "nameAr": "منتج COU-0043",
+      "nameEn": "Product COU-0043",
+      "images": [
+        "/uploads/catalog/COU-0043.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 303,
+      "sku": "COU-0044",
+      "nameAr": "منتج COU-0044",
+      "nameEn": "Product COU-0044",
+      "images": [
+        "/uploads/catalog/COU-0044.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 304,
+      "sku": "COU-0045",
+      "nameAr": "منتج COU-0045",
+      "nameEn": "Product COU-0045",
+      "images": [
+        "/uploads/catalog/COU-0045.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 305,
+      "sku": "COU-0046",
+      "nameAr": "منتج COU-0046",
+      "nameEn": "Product COU-0046",
+      "images": [
+        "/uploads/catalog/COU-0046.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 306,
+      "sku": "COU-0047",
+      "nameAr": "منتج COU-0047",
+      "nameEn": "Product COU-0047",
+      "images": [
+        "/uploads/catalog/COU-0047.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 307,
+      "sku": "COU-0048",
+      "nameAr": "منتج COU-0048",
+      "nameEn": "Product COU-0048",
+      "images": [
+        "/uploads/catalog/COU-0048.png"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    },
+    {
+      "id": 500,
+      "sku": "SOF-0048",
+      "nameAr": "منتج SOF-0048",
+      "nameEn": "Product SOF-0048",
+      "images": [
+        "/uploads/catalog/SOF-0048.jpg"
+      ],
+      "candidateOwners": [],
+      "fullyPreservedIn": []
+    }
+  ],
+  "missingAssetRefs": [
+    {
+      "id": 37,
+      "sku": "CAB-0009",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CAB-0009.png"
+    },
+    {
+      "id": 67,
+      "sku": "CAB-0039",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CAB-0039.png"
+    },
+    {
+      "id": 75,
+      "sku": "CAB-0047",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CAB-0047.jpeg"
+    },
+    {
+      "id": 76,
+      "sku": "CAB-0048",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CAB-0048.jpeg"
+    },
+    {
+      "id": 77,
+      "sku": "CAB-0049",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CAB-0049.jpeg"
+    },
+    {
+      "id": 153,
+      "sku": "CHA-MES-0013",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0013.png"
+    },
+    {
+      "id": 153,
+      "sku": "CHA-MES-0013",
+      "active": false,
+      "index": 1,
+      "url": "/uploads/catalog/CHA-MES-0014.png"
+    },
+    {
+      "id": 153,
+      "sku": "CHA-MES-0013",
+      "active": false,
+      "index": 2,
+      "url": "/uploads/catalog/CHA-MES-0015.png"
+    },
+    {
+      "id": 157,
+      "sku": "CHA-MES-0017",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0017.png"
+    },
+    {
+      "id": 160,
+      "sku": "CHA-MES-0020",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0020.png"
+    },
+    {
+      "id": 165,
+      "sku": "CHA-MES-0025",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0025.png"
+    },
+    {
+      "id": 173,
+      "sku": "CHA-MES-0033",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0033.png"
+    },
+    {
+      "id": 178,
+      "sku": "CHA-MES-0038",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0038.png"
+    },
+    {
+      "id": 180,
+      "sku": "CHA-MES-0040",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0040.png"
+    },
+    {
+      "id": 182,
+      "sku": "CHA-MES-0042",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0042.png"
+    },
+    {
+      "id": 183,
+      "sku": "CHA-MES-0043",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0043.png"
+    },
+    {
+      "id": 184,
+      "sku": "CHA-MES-0044",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0044.png"
+    },
+    {
+      "id": 188,
+      "sku": "CHA-MES-0048",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0048.png"
+    },
+    {
+      "id": 192,
+      "sku": "CHA-MES-0052",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0052.png"
+    },
+    {
+      "id": 193,
+      "sku": "CHA-MES-0053",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0053.png"
+    },
+    {
+      "id": 196,
+      "sku": "CHA-MES-0056",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0056.png"
+    },
+    {
+      "id": 198,
+      "sku": "CHA-MES-0058",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0058.png"
+    },
+    {
+      "id": 206,
+      "sku": "CHA-MES-0066",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0066.png"
+    },
+    {
+      "id": 210,
+      "sku": "CHA-MES-0070",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0070.png"
+    },
+    {
+      "id": 211,
+      "sku": "CHA-MES-0071",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0071.png"
+    },
+    {
+      "id": 212,
+      "sku": "CHA-MES-0072",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0072.png"
+    },
+    {
+      "id": 213,
+      "sku": "CHA-MES-0073",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0073.png"
+    },
+    {
+      "id": 217,
+      "sku": "CHA-MES-0077",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0077.png"
+    },
+    {
+      "id": 220,
+      "sku": "CHA-MES-0080",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0080.png"
+    },
+    {
+      "id": 221,
+      "sku": "CHA-MES-0081",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0081.png"
+    },
+    {
+      "id": 223,
+      "sku": "CHA-MES-0083",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0083.png"
+    },
+    {
+      "id": 225,
+      "sku": "CHA-MES-0085",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0085.png"
+    },
+    {
+      "id": 227,
+      "sku": "CHA-MES-0087",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0087.png"
+    },
+    {
+      "id": 229,
+      "sku": "CHA-MES-0089",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0089.png"
+    },
+    {
+      "id": 243,
+      "sku": "CHA-MES-0103",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0103.png"
+    },
+    {
+      "id": 245,
+      "sku": "CHA-MES-0105",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0105.png"
+    },
+    {
+      "id": 247,
+      "sku": "CHA-MES-0107",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/CHA-MES-0107.png"
+    },
+    {
+      "id": 265,
+      "sku": "COU-0006",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/COU-0006.png"
+    },
+    {
+      "id": 315,
+      "sku": "COU-0056",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/COU-0056.png"
+    },
+    {
+      "id": 349,
+      "sku": "EXE-0030",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/EXE-0030.png"
+    },
+    {
+      "id": 371,
+      "sku": "EXE-0052",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/EXE-0052.jpeg"
+    },
+    {
+      "id": 421,
+      "sku": "MEE-0050",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/MEE-0050.png"
+    },
+    {
+      "id": 426,
+      "sku": "MEE-0055",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/MEE-0055.png"
+    },
+    {
+      "id": 439,
+      "sku": "OPE-0007",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/OPE-0007.png"
+    },
+    {
+      "id": 443,
+      "sku": "OPE-0011",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/OPE-0011.png"
+    },
+    {
+      "id": 451,
+      "sku": "OPE-0019",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/OPE-0019.png"
+    },
+    {
+      "id": 464,
+      "sku": "SOF-0012",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0012.png"
+    },
+    {
+      "id": 466,
+      "sku": "SOF-0014",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0014.png"
+    },
+    {
+      "id": 469,
+      "sku": "SOF-0017",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0017.png"
+    },
+    {
+      "id": 470,
+      "sku": "SOF-0018",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0018.png"
+    },
+    {
+      "id": 472,
+      "sku": "SOF-0020",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0020.png"
+    },
+    {
+      "id": 474,
+      "sku": "SOF-0022",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0022.png"
+    },
+    {
+      "id": 475,
+      "sku": "SOF-0023",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0023.png"
+    },
+    {
+      "id": 477,
+      "sku": "SOF-0025",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0025.png"
+    },
+    {
+      "id": 478,
+      "sku": "SOF-0026",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0026.png"
+    },
+    {
+      "id": 480,
+      "sku": "SOF-0028",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0028.png"
+    },
+    {
+      "id": 482,
+      "sku": "SOF-0030",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0030.png"
+    },
+    {
+      "id": 484,
+      "sku": "SOF-0032",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0032.png"
+    },
+    {
+      "id": 485,
+      "sku": "SOF-0033",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0033.png"
+    },
+    {
+      "id": 487,
+      "sku": "SOF-0035",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0035.png"
+    },
+    {
+      "id": 488,
+      "sku": "SOF-0036",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0036.png"
+    },
+    {
+      "id": 490,
+      "sku": "SOF-0038",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0038.png"
+    },
+    {
+      "id": 491,
+      "sku": "SOF-0039",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0039.png"
+    },
+    {
+      "id": 493,
+      "sku": "SOF-0041",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0041.png"
+    },
+    {
+      "id": 494,
+      "sku": "SOF-0042",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0042.png"
+    },
+    {
+      "id": 495,
+      "sku": "SOF-0043",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0043.png"
+    },
+    {
+      "id": 496,
+      "sku": "SOF-0044",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0044.png"
+    },
+    {
+      "id": 499,
+      "sku": "SOF-0047",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0047.jpg"
+    },
+    {
+      "id": 502,
+      "sku": "SOF-0050",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0050.jpg"
+    },
+    {
+      "id": 503,
+      "sku": "SOF-0051",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0051.jpg"
+    },
+    {
+      "id": 504,
+      "sku": "SOF-0052",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0052.jpg"
+    },
+    {
+      "id": 505,
+      "sku": "SOF-0053",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0053.jpg"
+    },
+    {
+      "id": 506,
+      "sku": "SOF-0054",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0054.jpg"
+    },
+    {
+      "id": 519,
+      "sku": "SOF-0067",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/SOF-0067.png"
+    },
+    {
+      "id": 525,
+      "sku": "TAB-0005",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/TAB-0005.png"
+    },
+    {
+      "id": 532,
+      "sku": "TAB-0012",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/TAB-0012.png"
+    },
+    {
+      "id": 533,
+      "sku": "TAB-0013",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/TAB-0013.png"
+    },
+    {
+      "id": 534,
+      "sku": "TAB-0014",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/TAB-0014.png"
+    },
+    {
+      "id": 547,
+      "sku": "WOR-0010",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/WOR-0010.png"
+    },
+    {
+      "id": 562,
+      "sku": "WOR-0025",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/WOR-0025.png"
+    },
+    {
+      "id": 593,
+      "sku": "WOR-0056",
+      "active": false,
+      "index": 0,
+      "url": "/uploads/catalog/WOR-0056.png"
+    }
+  ],
+  "missingFiles": [],
+  "orphanedAssetLinks": [
+    {
+      "id": 47,
+      "catalogItemId": 47,
+      "url": "/uploads/catalog/CAB-0047.jpeg",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 19
+    },
+    {
+      "id": 48,
+      "catalogItemId": 39,
+      "url": "/uploads/catalog/CAB-0048.jpeg",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 11
+    },
+    {
+      "id": 49,
+      "catalogItemId": 40,
+      "url": "/uploads/catalog/CAB-0049.jpeg",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 12
+    },
+    {
+      "id": 183,
+      "catalogItemId": 194,
+      "url": "/uploads/catalog/CHA-MES-0071.png",
+      "role": "GALLERY",
+      "sortOrder": 3,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 168
+    },
+    {
+      "id": 184,
+      "catalogItemId": 194,
+      "url": "/uploads/catalog/CHA-MES-0072.png",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 166
+    },
+    {
+      "id": 185,
+      "catalogItemId": 195,
+      "url": "/uploads/catalog/CHA-MES-0073.png",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 167
+    },
+    {
+      "id": 343,
+      "catalogItemId": 329,
+      "url": "/uploads/catalog/EXE-0052.jpeg",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 301
+    },
+    {
+      "id": 398,
+      "catalogItemId": 381,
+      "url": "/uploads/catalog/MEE-0055.png",
+      "role": "GALLERY",
+      "sortOrder": 1,
+      "reviewStatus": "NEEDS_REVIEW",
+      "duplicateOfId": 353
+    }
+  ],
+  "malformedImageJson": []
+}

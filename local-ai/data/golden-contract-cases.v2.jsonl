@@ -1,0 +1,25 @@
+{"id":"valid-create-client","expectedValid":true,"value":{"actions":[{"kind":"CREATE_CLIENT","name":"Ahmed","phone":"01000000000"}],"unparsed":[]}}
+{"id":"valid-empty-actions-with-unparsed","expectedValid":true,"value":{"actions":[],"unparsed":["غير حالة المشروع"]}}
+{"id":"invalid-extra-envelope-field","expectedValid":false,"expectedError":"envelope.extra_field","value":{"actions":[],"unparsed":["x"],"explanation":"x"}}
+{"id":"invalid-actions-not-array","expectedValid":false,"expectedError":"envelope.invalid_type","value":{"actions":{},"unparsed":[]}}
+{"id":"invalid-unparsed-item","expectedValid":false,"expectedError":"envelope.invalid_unparsed_item","value":{"actions":[],"unparsed":[7]}}
+{"id":"invalid-empty-result","expectedValid":false,"expectedError":"envelope.empty_result","value":{"actions":[],"unparsed":[]}}
+{"id":"invalid-unsupported-kind","expectedValid":false,"expectedError":"action.unsupported_kind","value":{"actions":[{"kind":"UPDATE_PRICE","productSku":"A-1","price":8}],"unparsed":[]}}
+{"id":"invalid-extra-action-field","expectedValid":false,"expectedError":"action.extra_field","value":{"actions":[{"kind":"UPDATE_PROJECT_ITEM","projectRef":"5","productSku":"EXE-0001","quantity":4,"supplierQuery":"none"}],"unparsed":[]}}
+{"id":"invalid-missing-required","expectedValid":false,"expectedError":"action.missing_required","value":{"actions":[{"kind":"CREATE_CLIENT","name":"Ahmed"}],"unparsed":[]}}
+{"id":"invalid-empty-required-string","expectedValid":false,"expectedError":"action.invalid_value","value":{"actions":[{"kind":"CREATE_CLIENT","name":" ","phone":"01000000000"}],"unparsed":[]}}
+{"id":"invalid-empty-update-patch","expectedValid":false,"expectedError":"action.missing_patch","value":{"actions":[{"kind":"UPDATE_CLIENT","clientRef":"9"}],"unparsed":[]}}
+{"id":"invalid-project-status-enum","expectedValid":false,"expectedError":"action.invalid_enum","value":{"actions":[{"kind":"UPDATE_PROJECT_STATUS","projectRef":"9","status":"FINISHED"}],"unparsed":[]}}
+{"id":"invalid-boolean-quantity","expectedValid":false,"expectedError":"action.invalid_type","value":{"actions":[{"kind":"ADD_PROJECT_ITEM","projectRef":"9","productSku":"CHR-1","quantity":true}],"unparsed":[]}}
+{"id":"invalid-zero-quantity","expectedValid":false,"expectedError":"action.out_of_range","value":{"actions":[{"kind":"ADD_PROJECT_ITEM","projectRef":"9","productSku":"CHR-1","quantity":0}],"unparsed":[]}}
+{"id":"invalid-large-quantity","expectedValid":false,"expectedError":"action.out_of_range","value":{"actions":[{"kind":"ADD_PROJECT_ITEM","projectRef":"9","productSku":"CHR-1","quantity":10001}],"unparsed":[]}}
+{"id":"invalid-null-nonnullable","expectedValid":false,"expectedError":"action.invalid_type","value":{"actions":[{"kind":"CREATE_CLIENT","name":"Ahmed","phone":"01000000000","company":null}],"unparsed":[]}}
+{"id":"valid-null-clear","expectedValid":true,"value":{"actions":[{"kind":"UPDATE_CLIENT","clientRef":"9","notes":null}],"unparsed":[]}}
+{"id":"invalid-two-task-date-fields","expectedValid":false,"expectedError":"action.mutually_exclusive","value":{"actions":[{"kind":"UPDATE_TASK","taskRef":"4","dueDate":"2026-09-01","dueDateText":"غدا"}],"unparsed":[]}}
+{"id":"invalid-empty-unparsed-string","expectedValid":false,"expectedError":"envelope.invalid_unparsed_item","value":{"actions":[],"unparsed":[" "]}}
+{"id":"invalid-invented-grounded-company","expectedValid":false,"expectedError":"action.ungrounded_field","source":"Create client Mona phone 01011112222","value":{"actions":[{"kind":"CREATE_CLIENT","name":"Mona","phone":"01011112222","company":"Acme"}],"unparsed":[]}}
+{"id":"invalid-placeholder-grounded-notes","expectedValid":false,"expectedError":"action.placeholder_value","source":"Create client Mona phone 01011112222","value":{"actions":[{"kind":"CREATE_CLIENT","name":"Mona","phone":"01011112222","notes":"none"}],"unparsed":[]}}
+{"id":"invalid-grounded-integer-substring","expectedValid":false,"expectedError":"action.ungrounded_field","source":"Add SKU CHR-9 to project 12 and call 01022222222","value":{"actions":[{"kind":"ADD_PROJECT_ITEM","projectRef":"12","productSku":"CHR-9","quantity":2}],"unparsed":[]}}
+{"id":"valid-grounded-arabic-digits-enum-alias","expectedValid":true,"source":"غير حالة المشروع ٧ إلى قيد التصنيع","value":{"actions":[{"kind":"UPDATE_PROJECT_STATUS","projectRef":"7","status":"IN_PRODUCTION"}],"unparsed":[]}}
+{"id":"valid-grounded-null-clear-intent","expectedValid":true,"source":"عدل العميل 9 وامسح الملاحظات","value":{"actions":[{"kind":"UPDATE_CLIENT","clientRef":"9","notes":null}],"unparsed":[]}}
+{"id":"invalid-ungrounded-null-without-clear-intent","expectedValid":false,"expectedError":"action.ungrounded_field","source":"عدل العميل 9","value":{"actions":[{"kind":"UPDATE_CLIENT","clientRef":"9","notes":null}],"unparsed":[]}}

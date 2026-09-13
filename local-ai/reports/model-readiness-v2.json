@@ -1,0 +1,156 @@
+{
+  "schema": "hatab-local-ai-model-readiness-v2",
+  "generatedAt": "2026-09-05T20:20:12.267920+00:00",
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 2,
+  "contractSha256": "ab71570bc4cc7e10da283e483bf43ff38cbb97d9e777770623f178f8ec3f194f",
+  "contractFileSha256": "27a19843691bc8a165d277b20eea5b88402a24286573d57c88e35157f62a4e53",
+  "registeredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "modelEnabledKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "promptSha256": "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb",
+  "productionReady": false,
+  "blockers": [
+    "adapter.manifest_schema_missing_or_mismatch",
+    "adapter.model_artifact_hash_missing_or_mismatch",
+    "adapter.config_artifact_hash_missing_or_mismatch",
+    "adapter.contract_hash_missing_or_mismatch",
+    "adapter.prompt_hash_missing_or_mismatch",
+    "adapter.dataset_kinds_missing_or_invalid",
+    "adapter.model_enabled_kinds_drift",
+    "adapter.schema_version_missing_or_mismatch",
+    "adapter.runtime_metadata_missing_or_invalid",
+    "adapter.sampling_metadata_missing_or_invalid",
+    "evaluation.report_missing_or_invalid"
+  ],
+  "dataset": {
+    "valid": true,
+    "validationSha256": "75456bf3ca137adf867d6705e057b29ff04b664d3a7799260f2f71f1e1672819",
+    "rows": {
+      "train": 1179,
+      "eval": 180
+    },
+    "missingCoverage": [],
+    "crossSplitMessageCount": 0
+  },
+  "golden": {
+    "valid": true,
+    "errors": [],
+    "cases": 33,
+    "kindDistribution": {
+      "ADD_PROJECT_ITEM": 2,
+      "CREATE_CLIENT": 2,
+      "CREATE_ORDER_BUNDLE": 2,
+      "CREATE_TASK": 3,
+      "DELETE_CLIENT": 1,
+      "DELETE_PROJECT": 1,
+      "DELETE_TASK": 1,
+      "REMOVE_PROJECT_ITEM": 1,
+      "UPDATE_CLIENT": 2,
+      "UPDATE_PROJECT": 2,
+      "UPDATE_PROJECT_ITEM": 2,
+      "UPDATE_PROJECT_STATUS": 3,
+      "UPDATE_SUPPLIER_ORDER_STATUS": 2,
+      "UPDATE_TASK": 2
+    },
+    "languageDistribution": {
+      "ar": 14,
+      "en": 11,
+      "mixed": 8
+    },
+    "categoryDistribution": {
+      "ambiguity": 3,
+      "safety": 3,
+      "supported": 25,
+      "unsupported": 2
+    },
+    "missingRegisteredCoverage": [],
+    "missingModelCoverage": []
+  },
+  "contractCases": {
+    "valid": true,
+    "cases": 19,
+    "failures": []
+  },
+  "adapter": {
+    "path": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-v2",
+    "manifestPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-v2\\hatab-training-manifest.json",
+    "manifestSha256": "7c08b825919a89683ca27b618e6a2ead5691e63052e90f3db009ac4eabbbbd5b",
+    "modelPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-v2\\adapter_model.safetensors",
+    "modelSha256": "7a2ed9ecd95644e559d2702ccaf8c94dad0e7356d9d5784694bb27ce4f844061",
+    "configPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-v2\\adapter_config.json",
+    "configSha256": "0fc798e1d98f2c5861af930080e7569c3024bf4d1c172c63b76332a0f377f024",
+    "baseModel": "Qwen/Qwen3-0.6B",
+    "runtime": null,
+    "contractSha256": null,
+    "promptSha256": null,
+    "sampling": null,
+    "ready": false,
+    "blockers": [
+      "adapter.manifest_schema_missing_or_mismatch",
+      "adapter.model_artifact_hash_missing_or_mismatch",
+      "adapter.config_artifact_hash_missing_or_mismatch",
+      "adapter.contract_hash_missing_or_mismatch",
+      "adapter.prompt_hash_missing_or_mismatch",
+      "adapter.dataset_kinds_missing_or_invalid",
+      "adapter.model_enabled_kinds_drift",
+      "adapter.schema_version_missing_or_mismatch",
+      "adapter.runtime_metadata_missing_or_invalid",
+      "adapter.sampling_metadata_missing_or_invalid"
+    ],
+    "manifest": {
+      "schema": "hatab-erp-intent-lora-v1",
+      "baseModel": "Qwen/Qwen3-0.6B",
+      "adapterPath": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora-v2",
+      "datasetPath": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\train.jsonl",
+      "datasetSha256": "a8e0615d8af9dbbf7a7b4d142389319f35fcd15ad722c3c377f035279d7a0868",
+      "datasetRows": 225,
+      "maxLength": 384,
+      "optimizerSteps": 60,
+      "gradientAccumulation": 1,
+      "learningRate": 5e-05,
+      "resumedFrom": "D:\\hatab-local-ai\\artifacts\\qwen3-0.6b-hatab-lora",
+      "selectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "naturalOnly": true,
+      "seed": 260901,
+      "elapsedSeconds": 760.3,
+      "torchVersion": "2.5.1+cpu"
+    }
+  },
+  "evaluation": {
+    "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\reports\\adapter-candidate-golden-v2.json",
+    "reportSha256": null,
+    "passed": null,
+    "contractSha256": null,
+    "promptSha256": null,
+    "adapterManifestSha256": null,
+    "ready": false,
+    "blockers": [
+      "evaluation.report_missing_or_invalid"
+    ],
+    "report": null
+  },
+  "readinessSha256": "0e78121f79513b02830824c787f595ac0649250769cfa4c2b87791f9f1590eda"
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "hatab-local-ai-golden-suite-v2",
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 2,
+  "contractSha256": "ab71570bc4cc7e10da283e483bf43ff38cbb97d9e777770623f178f8ec3f194f",
+  "contractFileSha256": "27a19843691bc8a165d277b20eea5b88402a24286573d57c88e35157f62a4e53",
+  "registeredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "modelEnabledKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "promptSha256": "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb",
+  "goldenFixture": {
+    "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\golden-evaluation.v2.jsonl",
+    "sha256": "e77371dba54fe14a5eb505961a2029b5f538c2ba0dd2d6d7144504d7a90e5154",
+    "semanticSha256": "1979eb1319a117ed3a42d16bd9823ac630ce6306bc5631f2d392fdb704363ec2",
+    "rows": 33
+  },
+  "contractFixture": {
+    "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\golden-contract-cases.v2.jsonl",
+    "sha256": "bd7ce242f2d2ea2a4cdb2f4dd85df91b3d11a1a79c621618650798f6808c81a7",
+    "semanticSha256": "daed03c5ecf5c15d76ad8092e3f99048d61fd5ed34bd70c6f68f98884b97fdd7",
+    "rows": 19
+  },
+  "goldenValidation": {
+    "valid": true,
+    "errors": [],
+    "cases": 33,
+    "kindDistribution": {
+      "ADD_PROJECT_ITEM": 2,
+      "CREATE_CLIENT": 2,
+      "CREATE_ORDER_BUNDLE": 2,
+      "CREATE_TASK": 3,
+      "DELETE_CLIENT": 1,
+      "DELETE_PROJECT": 1,
+      "DELETE_TASK": 1,
+      "REMOVE_PROJECT_ITEM": 1,
+      "UPDATE_CLIENT": 2,
+      "UPDATE_PROJECT": 2,
+      "UPDATE_PROJECT_ITEM": 2,
+      "UPDATE_PROJECT_STATUS": 3,
+      "UPDATE_SUPPLIER_ORDER_STATUS": 2,
+      "UPDATE_TASK": 2
+    },
+    "languageDistribution": {
+      "ar": 14,
+      "en": 11,
+      "mixed": 8
+    },
+    "categoryDistribution": {
+      "ambiguity": 3,
+      "safety": 3,
+      "supported": 25,
+      "unsupported": 2
+    },
+    "missingRegisteredCoverage": [],
+    "missingModelCoverage": []
+  },
+  "contractValidation": {
+    "valid": true,
+    "cases": 19,
+    "failures": []
+  },
+  "scope": "model",
+  "scopeCases": 19,
+  "modelEligibleCases": 19,
+  "passed": true
+}

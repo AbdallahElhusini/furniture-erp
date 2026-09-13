@@ -1,0 +1,542 @@
+.hero {
+  --hero-paper: #f4f4f1;
+  --hero-ink: #14231c;
+  --hero-line: rgba(20, 35, 28, 0.15);
+  --hero-muted: rgba(20, 35, 28, 0.62);
+  --hero-nav-height: clamp(6rem, 12.5vh, 7.25rem);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--hero-line);
+  background: #e9e9e6;
+  padding: clamp(0.65rem, 1.45vw, 1.35rem);
+  color: var(--hero-ink);
+}
+
+.stage {
+  position: relative;
+  width: min(100%, 100rem);
+  height: clamp(36rem, calc(100svh - 7rem), 54rem);
+  min-height: 36rem;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--hero-line);
+  background: var(--hero-paper);
+  box-shadow: 0 28px 80px -58px rgba(18, 29, 23, 0.48);
+}
+
+.gridField {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(90deg, transparent calc(40% - 0.5px), var(--hero-line) 40%, transparent calc(40% + 0.5px)),
+    linear-gradient(90deg, transparent calc(50% - 0.5px), var(--hero-line) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(90deg, transparent calc(60% - 0.5px), var(--hero-line) 60%, transparent calc(60% + 0.5px)),
+    linear-gradient(0deg, transparent calc(33.333% - 0.5px), rgba(20, 35, 28, 0.055) 33.333%, transparent calc(33.333% + 0.5px)),
+    linear-gradient(0deg, transparent calc(66.666% - 0.5px), rgba(20, 35, 28, 0.055) 66.666%, transparent calc(66.666% + 0.5px));
+}
+
+.visual {
+  position: absolute;
+  top: 0;
+  bottom: var(--hero-nav-height);
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+  border-inline: 1px solid var(--hero-line);
+  background: #dadbd7;
+  transition:
+    left 850ms cubic-bezier(0.65, 0, 0.25, 1),
+    right 850ms cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  transition: opacity 420ms ease;
+  will-change: clip-path, opacity, transform;
+}
+
+.imageLayerActive {
+  z-index: 2;
+  opacity: 1;
+}
+
+.image {
+  object-fit: cover;
+  filter: saturate(0.88) contrast(0.98);
+}
+
+.imageWash {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(180deg, rgba(244, 244, 241, 0.08), transparent 28%),
+    linear-gradient(90deg, rgba(20, 35, 28, 0.06), transparent 34%, rgba(20, 35, 28, 0.08));
+}
+
+.frameMark {
+  pointer-events: none;
+  position: absolute;
+  inset: clamp(1rem, 2vw, 1.75rem);
+  z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.52);
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.detailPortal {
+  position: absolute;
+  inset-inline-end: clamp(1.25rem, 2.6vw, 2.4rem);
+  bottom: clamp(1.25rem, 2.8vw, 2.5rem);
+  z-index: 6;
+  width: clamp(6.25rem, 9vw, 8.5rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: #d8d9d5;
+  box-shadow: 0 18px 45px -22px rgba(18, 29, 23, 0.72);
+  animation: hero-detail-in 760ms 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.detailImage {
+  object-fit: cover;
+  transform: scale(1.28);
+  filter: saturate(0.86) contrast(1.03);
+}
+
+.detailPortal span {
+  position: absolute;
+  inset-inline-end: 0.72rem;
+  bottom: 0.58rem;
+  z-index: 2;
+  display: grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(20, 35, 28, 0.9);
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 900;
+}
+
+.copyPlane {
+  position: absolute;
+  top: 0;
+  bottom: var(--hero-nav-height);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-inline: 1px solid var(--hero-line);
+  background: color-mix(in srgb, var(--hero-paper) 97%, transparent);
+  transition:
+    left 850ms cubic-bezier(0.65, 0, 0.25, 1),
+    right 850ms cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+.brandRail {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--hero-line);
+  padding-inline: clamp(1.25rem, 3vw, 2.75rem);
+  color: rgba(20, 35, 28, 0.68);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.motionToggle {
+  display: grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin-inline-start: auto;
+  flex: none;
+  place-items: center;
+  border: 1px solid var(--hero-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--hero-ink);
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.motionToggle:hover {
+  border-color: #9a3942;
+  background: #fff;
+  color: #9a3942;
+}
+
+.motionToggle:focus-visible {
+  outline: 2px solid #9a3942;
+  outline-offset: 2px;
+}
+
+.motionIcon {
+  width: 0.92rem;
+  height: 0.92rem;
+}
+
+.monogram {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: none;
+  object-fit: cover;
+}
+
+.copyMotion {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 3vw, 3.5rem) clamp(1.5rem, 4.5vw, 5rem);
+}
+
+.stageIndex {
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1.25rem);
+  color: #9a3942;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  max-width: 9.5ch;
+  margin: 0;
+  color: var(--hero-ink);
+  font-size: clamp(3.35rem, 6vw, 6.85rem);
+  font-weight: 560;
+  letter-spacing: -0.055em;
+  line-height: 0.93;
+  text-wrap: balance;
+}
+
+[dir="rtl"] .title {
+  max-width: 11ch;
+  letter-spacing: normal;
+  line-height: 1.03;
+}
+
+.body {
+  max-width: 38rem;
+  margin: clamp(0.9rem, 1.7vw, 1.45rem) 0 0;
+  color: var(--hero-muted);
+  font-size: clamp(0.8rem, 1vw, 0.98rem);
+  font-weight: 430;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.activeNote {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1rem;
+  margin-top: clamp(0.9rem, 1.8vw, 1.55rem);
+  border-top: 1px solid var(--hero-line);
+  padding-top: 0.9rem;
+}
+
+.activeNote span {
+  color: var(--hero-ink);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.035em;
+}
+
+.activeNote p {
+  margin: 0;
+  color: var(--hero-muted);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.stageButton:focus-visible {
+  outline: 2px solid #9a3942;
+  outline-offset: -2px;
+}
+
+.caption {
+  margin: 0;
+  border-top: 1px solid var(--hero-line);
+  padding: 0.8rem clamp(1.25rem, 3vw, 2.75rem);
+  color: rgba(20, 35, 28, 0.48);
+  font-size: 0.6rem;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
+.stageNavigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  display: grid;
+  height: var(--hero-nav-height);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--hero-line);
+  background: color-mix(in srgb, var(--hero-paper) 98%, transparent);
+}
+
+.stageButton {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 0;
+  border-inline-end: 1px solid var(--hero-line);
+  background: transparent;
+  padding: 0.75rem clamp(0.8rem, 2vw, 1.5rem) 0.9rem;
+  color: var(--hero-ink);
+  cursor: pointer;
+  text-align: start;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.stageButton:last-child {
+  border-inline-end: 0;
+}
+
+.stageButton:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.stageButton[data-active="true"] {
+  background: #fff;
+  color: #9a3942;
+}
+
+.progress {
+  position: absolute;
+  top: -1px;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: #9a3942;
+}
+
+.stageButton[data-active="true"] .progress {
+  animation: hero-stage-progress 5.6s linear forwards;
+}
+
+.buttonNumber {
+  color: currentColor;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  opacity: 0.62;
+}
+
+.buttonLabel {
+  max-width: 13ch;
+  color: currentColor;
+  font-size: clamp(0.72rem, 1.05vw, 1rem);
+  font-weight: 720;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.hero[data-paused="true"] .progress {
+  animation-play-state: paused;
+}
+
+@keyframes hero-stage-progress {
+  to { width: 100%; }
+}
+
+@keyframes hero-detail-in {
+  from { opacity: 0; transform: scale(0.48); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    --hero-nav-height: auto;
+    padding: 0;
+    background: var(--hero-paper);
+  }
+
+  .stage {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: calc(100svh - 6.5rem);
+    flex-direction: column;
+    border-inline: 0;
+  }
+
+  .gridField {
+    background-image:
+      linear-gradient(90deg, transparent calc(50% - 0.5px), var(--hero-line) 50%, transparent calc(50% + 0.5px)),
+      linear-gradient(0deg, transparent calc(33.333% - 0.5px), rgba(20, 35, 28, 0.05) 33.333%, transparent calc(33.333% + 0.5px));
+  }
+
+  .copyPlane {
+    position: relative !important;
+    inset: auto !important;
+    order: 1;
+    border-inline: 0;
+    background: rgba(244, 244, 241, 0.98);
+  }
+
+  .copyMotion {
+    min-height: 21rem;
+    padding: 1.75rem clamp(1.5rem, 7vw, 4rem) 1.6rem;
+  }
+
+  .title {
+    max-width: 13ch;
+    font-size: clamp(3.55rem, 9.8vw, 6.2rem);
+  }
+
+  .body {
+    max-width: 44rem;
+    font-size: 0.95rem;
+  }
+
+  .activeNote {
+    max-width: 40rem;
+  }
+
+  .caption {
+    display: none;
+  }
+
+  .visual {
+    position: relative !important;
+    inset: auto !important;
+    order: 2;
+    width: 100%;
+    height: clamp(20rem, 43svh, 30rem);
+    flex: none;
+    border: 0;
+    border-top: 1px solid var(--hero-line);
+    border-bottom: 1px solid var(--hero-line);
+  }
+
+  .stageNavigation {
+    position: relative;
+    order: 3;
+    height: auto;
+    min-height: 6.25rem;
+    flex: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .stage {
+    min-height: auto;
+  }
+
+  .brandRail {
+    min-height: 3.65rem;
+    padding-inline: 1.25rem;
+  }
+
+  .copyMotion {
+    min-height: 0;
+    padding: 1.3rem 1.25rem 1.25rem;
+  }
+
+  .stageIndex {
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    max-width: 12ch;
+    font-size: clamp(2.95rem, 13.8vw, 4.5rem);
+    line-height: 0.96;
+  }
+
+  [dir="rtl"] .title {
+    font-size: clamp(2.85rem, 12.8vw, 4.15rem);
+    line-height: 1.08;
+  }
+
+  .body {
+    margin-top: 0.85rem;
+    font-size: 0.84rem;
+    line-height: 1.72;
+  }
+
+  .activeNote {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    margin-top: 0.95rem;
+  }
+
+  .activeNote p {
+    font-size: 0.68rem;
+  }
+
+  .visual {
+    height: clamp(12.5rem, 25svh, 15rem);
+  }
+
+  .frameMark {
+    inset: 0.85rem;
+  }
+
+  .detailPortal {
+    inset-inline-end: 1rem;
+    bottom: 1rem;
+    width: 5.7rem;
+  }
+
+  .stageNavigation {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--hero-line);
+  }
+
+  .stageButton {
+    min-height: 5rem;
+    border-top: 0;
+    padding: 0.6rem 0.55rem 0.7rem;
+  }
+
+  .stageButton:nth-child(2n) {
+    border-inline-end: 1px solid var(--hero-line);
+  }
+
+  .stageButton:last-child {
+    border-inline-end: 0;
+  }
+
+  .buttonLabel {
+    max-width: 11ch;
+    font-size: 0.62rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual,
+  .copyPlane,
+  .imageLayer,
+  .motionToggle,
+  .stageButton {
+    transition: none !important;
+  }
+
+  .progress {
+    display: none;
+    animation: none !important;
+  }
+
+  .detailPortal {
+    animation: none !important;
+  }
+}

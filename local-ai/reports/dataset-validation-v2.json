@@ -1,0 +1,191 @@
+{
+  "schema": "hatab-local-ai-dataset-validation-v2",
+  "generatedAt": "2026-09-05T20:18:30.166871+00:00",
+  "valid": true,
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 2,
+  "contractSha256": "ab71570bc4cc7e10da283e483bf43ff38cbb97d9e777770623f178f8ec3f194f",
+  "contractFileSha256": "27a19843691bc8a165d277b20eea5b88402a24286573d57c88e35157f62a4e53",
+  "registeredKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "DELETE_CLIENT",
+    "DELETE_PROJECT",
+    "DELETE_TASK",
+    "REMOVE_PROJECT_ITEM",
+    "UPDATE_CLIENT",
+    "UPDATE_PROJECT",
+    "UPDATE_PROJECT_ITEM",
+    "UPDATE_PROJECT_STATUS",
+    "UPDATE_SUPPLIER_ORDER_STATUS",
+    "UPDATE_TASK"
+  ],
+  "modelEnabledKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "promptSha256": "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb",
+  "allowedKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "requiredCoverage": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "observedKinds": [
+    "ADD_PROJECT_ITEM",
+    "CREATE_CLIENT",
+    "CREATE_ORDER_BUNDLE",
+    "CREATE_TASK",
+    "UPDATE_PROJECT_STATUS"
+  ],
+  "missingCoverage": [],
+  "missingCoverageBySplit": {
+    "train": [],
+    "eval": []
+  },
+  "disabledKindsObserved": [],
+  "promptHashes": {
+    "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb": 1359
+  },
+  "splits": {
+    "train": {
+      "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\train.jsonl",
+      "rows": 1179,
+      "sha256": "e212139fd77f821f2f257c066aac5d228031812c31d0c7f7cab18503ab2f555a",
+      "actionDistribution": {
+        "ADD_PROJECT_ITEM": 193,
+        "CREATE_CLIENT": 204,
+        "CREATE_ORDER_BUNDLE": 453,
+        "CREATE_TASK": 106,
+        "UPDATE_PROJECT_STATUS": 104
+      },
+      "languageDistribution": {
+        "ar": 289,
+        "en": 146,
+        "mixed": 744
+      },
+      "duplicateMessageRows": 0
+    },
+    "eval": {
+      "path": "C:\\Users\\Abdallah\\.gemini\\antigravity\\scratch\\furniture-erp\\local-ai\\data\\eval.jsonl",
+      "rows": 180,
+      "sha256": "abe836c0ac76c97859dd7dfab58ab71e026b581977f5742bc58cbc3286b2953a",
+      "actionDistribution": {
+        "ADD_PROJECT_ITEM": 27,
+        "CREATE_CLIENT": 36,
+        "CREATE_ORDER_BUNDLE": 67,
+        "CREATE_TASK": 14,
+        "UPDATE_PROJECT_STATUS": 16
+      },
+      "languageDistribution": {
+        "ar": 46,
+        "en": 19,
+        "mixed": 115
+      },
+      "duplicateMessageRows": 0
+    }
+  },
+  "leakage": {
+    "crossSplitMessageCount": 0,
+    "sampleSha256": []
+  },
+  "errorCount": 0,
+  "errorCounts": {},
+  "errors": [],
+  "errorsTruncated": 0,
+  "warnings": [],
+  "manifest": {
+    "schema": "hatab-erp-intent-dataset-v2",
+    "seed": 260901,
+    "trainRows": 1179,
+    "evalRows": 180,
+    "trainSha256": "e212139fd77f821f2f257c066aac5d228031812c31d0c7f7cab18503ab2f555a",
+    "evalSha256": "abe836c0ac76c97859dd7dfab58ab71e026b581977f5742bc58cbc3286b2953a",
+    "schemaVersion": "hatab-admin-assistant-operations-v2",
+    "contractVersion": 2,
+    "contractSha256": "ab71570bc4cc7e10da283e483bf43ff38cbb97d9e777770623f178f8ec3f194f",
+    "contractFileSha256": "27a19843691bc8a165d277b20eea5b88402a24286573d57c88e35157f62a4e53",
+    "registeredKinds": [
+      "ADD_PROJECT_ITEM",
+      "CREATE_CLIENT",
+      "CREATE_ORDER_BUNDLE",
+      "CREATE_TASK",
+      "DELETE_CLIENT",
+      "DELETE_PROJECT",
+      "DELETE_TASK",
+      "REMOVE_PROJECT_ITEM",
+      "UPDATE_CLIENT",
+      "UPDATE_PROJECT",
+      "UPDATE_PROJECT_ITEM",
+      "UPDATE_PROJECT_STATUS",
+      "UPDATE_SUPPLIER_ORDER_STATUS",
+      "UPDATE_TASK"
+    ],
+    "modelEnabledKinds": [
+      "ADD_PROJECT_ITEM",
+      "CREATE_CLIENT",
+      "CREATE_ORDER_BUNDLE",
+      "CREATE_TASK",
+      "UPDATE_PROJECT_STATUS"
+    ],
+    "promptSha256": "495a4cf5113ed604434d60de0ab30757a24da2165b889f33db0b1b9f037de7fb",
+    "allowedKinds": [
+      "ADD_PROJECT_ITEM",
+      "CREATE_CLIENT",
+      "CREATE_ORDER_BUNDLE",
+      "CREATE_TASK",
+      "UPDATE_PROJECT_STATUS"
+    ],
+    "includeDisabled": false,
+    "actionDistribution": {
+      "train": {
+        "ADD_PROJECT_ITEM": 193,
+        "CREATE_CLIENT": 204,
+        "CREATE_ORDER_BUNDLE": 453,
+        "CREATE_TASK": 106,
+        "UPDATE_PROJECT_STATUS": 104
+      },
+      "eval": {
+        "ADD_PROJECT_ITEM": 27,
+        "CREATE_CLIENT": 36,
+        "CREATE_ORDER_BUNDLE": 67,
+        "CREATE_TASK": 14,
+        "UPDATE_PROJECT_STATUS": 16
+      }
+    },
+    "languageDistribution": {
+      "train": {
+        "ar": 289,
+        "en": 146,
+        "mixed": 744
+      },
+      "eval": {
+        "ar": 46,
+        "en": 19,
+        "mixed": 115
+      }
+    },
+    "splitPolicy": "deduplicate-normalized-message-then-seeded-shuffle",
+    "containsRealCustomerData": false,
+    "notes": "Synthetic names/phones; real catalog SKUs and supplier names only.",
+    "validation": {
+      "valid": true,
+      "errorCount": 0,
+      "warnings": []
+    }
+  },
+  "validationSha256": "75456bf3ca137adf867d6705e057b29ff04b664d3a7799260f2f71f1e1672819"
+}

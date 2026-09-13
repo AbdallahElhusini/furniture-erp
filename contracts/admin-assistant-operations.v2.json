@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "hatab-admin-assistant-operations-v2",
+  "contractVersion": 3,
+  "languageSupport": ["ar", "en", "ar-en-code-switch"],
+  "envelope": {
+    "required": ["actions", "unparsed"],
+    "additionalProperties": false,
+    "maxActions": 25,
+    "maxUnparsed": 25,
+    "maxUnparsedItemLength": 8000,
+    "requireGroundedUnparsed": true
+  },
+  "operations": [
+    {
+      "kind": "CREATE_CLIENT",
+      "domain": "clients",
+      "handler": "clients.create",
+      "summaryEn": "Create a client",
+      "summaryAr": "إضافة عميل",
+      "risk": "LOW",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "name": { "type": "string", "required": true, "maxLength": 200, "grounded": true },
+        "phone": { "type": "string", "required": true, "maxLength": 80, "grounded": true },
+        "company": { "type": "string", "required": false, "maxLength": 200, "grounded": true },
+        "notes": { "type": "string", "required": false, "maxLength": 1000, "grounded": true }
+      }
+    },
+    {
+      "kind": "CREATE_ORDER_BUNDLE",
+      "domain": "projects",
+      "handler": "projects.createOrderBundle",
+      "summaryEn": "Create a client/project/product order bundle",
+      "summaryAr": "إنشاء عميل ومشروع وطلب منتج مترابط",
+      "risk": "HIGH",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "clientName": { "type": "string", "required": true, "maxLength": 200, "grounded": true },
+        "clientPhone": { "type": "string", "required": true, "maxLength": 80, "grounded": true },
+        "projectTitle": { "type": "string", "required": true, "maxLength": 240, "grounded": true },
+        "productSku": { "type": "string", "required": true, "maxLength": 100, "grounded": true },
+        "quantity": { "type": "integer", "required": true, "minimum": 1, "maximum": 10000, "grounded": true },
+        "unitPrice": { "type": "number", "required": false, "minimum": 0, "maximum": 1000000000, "grounded": true },
+        "unitCost": { "type": "number", "required": false, "minimum": 0, "maximum": 1000000000, "grounded": true },
+        "supplierQuery": { "type": "string", "required": false, "maxLength": 200, "grounded": true },
+        "clientCompany": { "type": "string", "required": false, "maxLength": 200, "grounded": true },
+        "clientEmail": { "type": "string", "required": false, "maxLength": 320, "grounded": true },
+        "clientAddress": { "type": "string", "required": false, "maxLength": 500, "grounded": true },
+        "clientNotes": { "type": "string", "required": false, "maxLength": 1000, "grounded": true },
+        "projectPriority": { "type": "enum", "required": false, "values": ["LOW", "MEDIUM", "HIGH", "URGENT"], "grounded": true },
+        "projectNotes": { "type": "string", "required": false, "maxLength": 1000, "grounded": true },
+        "estimatedDelivery": { "type": "string", "required": false, "maxLength": 100, "grounded": true },
+        "itemNotes": { "type": "string", "required": false, "maxLength": 1000, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_PROJECT_STATUS",
+      "domain": "projects",
+      "handler": "projects.changeStatus",
+      "summaryEn": "Change project status",
+      "summaryAr": "تغيير حالة مشروع",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "status": { "type": "enum", "required": true, "values": ["LEAD", "INSPECTION", "DESIGNING", "PENDING_APPROVAL", "APPROVED", "IN_PRODUCTION", "READY", "INSTALLING", "COMPLETED", "CANCELLED"], "grounded": true }
+      },
+      "riskEscalations": [
+        { "when": { "status": ["CANCELLED"] }, "risk": "HIGH" }
+      ]
+    },
+    {
+      "kind": "CREATE_TASK",
+      "domain": "tasks",
+      "handler": "tasks.create",
+      "summaryEn": "Create a task",
+      "summaryAr": "إضافة مهمة",
+      "risk": "LOW",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "title": { "type": "string", "required": true, "maxLength": 240, "grounded": true },
+        "dueDateText": { "type": "string", "required": true, "maxLength": 100, "grounded": true },
+        "priority": { "type": "enum", "required": true, "values": ["LOW", "MEDIUM", "HIGH", "URGENT"], "grounded": true },
+        "taskType": { "type": "enum", "required": true, "values": ["SUPPLIER_FOLLOWUP", "DESIGN", "INSTALLATION", "DELIVERY", "INSPECTION", "GENERAL"], "grounded": true },
+        "projectRef": { "type": "reference", "required": false, "maxLength": 200, "grounded": true },
+        "description": { "type": "string", "required": false, "maxLength": 1000, "grounded": true }
+      }
+    },
+    {
+      "kind": "ADD_PROJECT_ITEM",
+      "domain": "projects",
+      "handler": "projects.addItem",
+      "summaryEn": "Add a catalog item to a project",
+      "summaryAr": "إضافة منتج إلى مشروع",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "productSku": { "type": "string", "required": true, "maxLength": 100, "grounded": true },
+        "quantity": { "type": "integer", "required": true, "minimum": 1, "maximum": 10000, "grounded": true },
+        "notes": { "type": "string", "required": false, "maxLength": 1000, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_CLIENT",
+      "domain": "clients",
+      "handler": "clients.update",
+      "summaryEn": "Update a client",
+      "summaryAr": "تعديل عميل",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "clientRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "name": { "type": "string", "required": false, "maxLength": 200, "grounded": true },
+        "phone": { "type": "string", "required": false, "maxLength": 80, "grounded": true },
+        "company": { "type": "string", "required": false, "nullable": true, "maxLength": 200, "grounded": true, "nullRequiresClearIntent": true },
+        "email": { "type": "string", "required": false, "nullable": true, "maxLength": 320, "grounded": true, "nullRequiresClearIntent": true },
+        "address": { "type": "string", "required": false, "nullable": true, "maxLength": 500, "grounded": true, "nullRequiresClearIntent": true },
+        "notes": { "type": "string", "required": false, "nullable": true, "maxLength": 1000, "grounded": true, "nullRequiresClearIntent": true }
+      },
+      "atLeastOneOf": ["name", "phone", "company", "email", "address", "notes"]
+    },
+    {
+      "kind": "DELETE_CLIENT",
+      "domain": "clients",
+      "handler": "clients.delete",
+      "summaryEn": "Delete a client after dependency checks",
+      "summaryAr": "حذف عميل بعد فحص الارتباطات",
+      "risk": "HIGH",
+      "approval": "EXPLICIT",
+      "destructive": true,
+      "modelEnabled": true,
+      "fields": {
+        "clientRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_PROJECT",
+      "domain": "projects",
+      "handler": "projects.update",
+      "summaryEn": "Update project fields",
+      "summaryAr": "تعديل بيانات مشروع",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "title": { "type": "string", "required": false, "maxLength": 240, "grounded": true },
+        "status": { "type": "enum", "required": false, "values": ["LEAD", "INSPECTION", "DESIGNING", "PENDING_APPROVAL", "APPROVED", "IN_PRODUCTION", "READY", "INSTALLING", "COMPLETED", "CANCELLED"], "grounded": true },
+        "priority": { "type": "enum", "required": false, "values": ["LOW", "MEDIUM", "HIGH", "URGENT"], "grounded": true },
+        "notes": { "type": "string", "required": false, "nullable": true, "maxLength": 1000, "grounded": true, "nullRequiresClearIntent": true },
+        "estimatedDelivery": { "type": "string", "required": false, "nullable": true, "maxLength": 100, "grounded": true, "nullRequiresClearIntent": true }
+      },
+      "atLeastOneOf": ["title", "status", "priority", "notes", "estimatedDelivery"],
+      "riskEscalations": [
+        { "when": { "status": ["CANCELLED"] }, "risk": "HIGH" }
+      ]
+    },
+    {
+      "kind": "DELETE_PROJECT",
+      "domain": "projects",
+      "handler": "projects.delete",
+      "summaryEn": "Delete a project after dependency checks",
+      "summaryAr": "حذف مشروع بعد فحص الارتباطات",
+      "risk": "HIGH",
+      "approval": "EXPLICIT",
+      "destructive": true,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_PROJECT_ITEM",
+      "domain": "projects",
+      "handler": "projects.updateItem",
+      "summaryEn": "Update a project item",
+      "summaryAr": "تعديل منتج داخل مشروع",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "productSku": { "type": "string", "required": true, "maxLength": 100, "grounded": true },
+        "quantity": { "type": "integer", "required": false, "minimum": 1, "maximum": 10000, "grounded": true },
+        "status": { "type": "enum", "required": false, "values": ["PENDING", "ORDERED", "IN_PRODUCTION", "READY", "DELIVERED", "INSTALLED"], "grounded": true },
+        "notes": { "type": "string", "required": false, "nullable": true, "maxLength": 1000, "grounded": true, "nullRequiresClearIntent": true }
+      },
+      "atLeastOneOf": ["quantity", "status", "notes"],
+      "riskEscalations": [
+        { "when": { "status": ["DELIVERED", "INSTALLED"] }, "risk": "HIGH" }
+      ]
+    },
+    {
+      "kind": "REMOVE_PROJECT_ITEM",
+      "domain": "projects",
+      "handler": "projects.removeItem",
+      "summaryEn": "Remove an item from a project",
+      "summaryAr": "حذف منتج من مشروع",
+      "risk": "HIGH",
+      "approval": "EXPLICIT",
+      "destructive": true,
+      "modelEnabled": true,
+      "fields": {
+        "projectRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "productSku": { "type": "string", "required": true, "maxLength": 100, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_TASK",
+      "domain": "tasks",
+      "handler": "tasks.update",
+      "summaryEn": "Update a task",
+      "summaryAr": "تعديل مهمة",
+      "risk": "LOW",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "taskRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "title": { "type": "string", "required": false, "maxLength": 240, "grounded": true },
+        "dueDate": { "type": "string", "required": false, "maxLength": 100, "grounded": true },
+        "dueDateText": { "type": "string", "required": false, "maxLength": 100, "grounded": true },
+        "status": { "type": "enum", "required": false, "values": ["TODO", "IN_PROGRESS", "DONE"], "grounded": true },
+        "priority": { "type": "enum", "required": false, "values": ["LOW", "MEDIUM", "HIGH", "URGENT"], "grounded": true },
+        "taskType": { "type": "enum", "required": false, "values": ["SUPPLIER_FOLLOWUP", "DESIGN", "INSTALLATION", "DELIVERY", "INSPECTION", "GENERAL"], "grounded": true },
+        "description": { "type": "string", "required": false, "nullable": true, "maxLength": 1000, "grounded": true, "nullRequiresClearIntent": true }
+      },
+      "atLeastOneOf": ["title", "dueDate", "dueDateText", "status", "priority", "taskType", "description"],
+      "mutuallyExclusive": [["dueDate", "dueDateText"]]
+    },
+    {
+      "kind": "DELETE_TASK",
+      "domain": "tasks",
+      "handler": "tasks.delete",
+      "summaryEn": "Delete a task",
+      "summaryAr": "حذف مهمة",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": true,
+      "modelEnabled": true,
+      "fields": {
+        "taskRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true }
+      }
+    },
+    {
+      "kind": "UPDATE_SUPPLIER_ORDER_STATUS",
+      "domain": "supplierOrders",
+      "handler": "supplierOrders.changeStatus",
+      "summaryEn": "Change supplier-order status",
+      "summaryAr": "تغيير حالة أمر توريد",
+      "risk": "MEDIUM",
+      "approval": "EXPLICIT",
+      "destructive": false,
+      "modelEnabled": true,
+      "fields": {
+        "orderRef": { "type": "reference", "required": true, "maxLength": 200, "grounded": true },
+        "status": { "type": "enum", "required": true, "values": ["PENDING", "CONFIRMED", "IN_PRODUCTION", "READY", "SHIPPED", "DELIVERED", "CANCELLED"], "grounded": true }
+      },
+      "riskEscalations": [
+        { "when": { "status": ["DELIVERED", "CANCELLED"] }, "risk": "HIGH" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "schema": "hatab-erp-intent-evaluation-v1",
+  "samples": 12,
+  "validJsonRate": 1.0,
+  "actionKindExactRate": 1.0,
+  "contractValidRate": 0.8333333333333334,
+  "exactMatchRate": 0.6666666666666666,
+  "results": [
+    {
+      "index": 1,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"سارة خالد\",\"clientPhone\":\"01012346889\",\"projectTitle\":\"مساحة فريق المبيعات\",\"productSku\":\"EXE-0024\",\"quantity\":4,\"supplierQuery\":\"good line \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 2,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"أحمد علي\",\"clientPhone\":\"01012347000\",\"projectTitle\":\"غرفة مجلس الإدارة\",\"productSku\":\"SOF-0009\",\"quantity\":3,\"supplierQuery\":\"mac \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 3,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"نور أحمد\",\"clientPhone\":\"01012346824\",\"projectTitle\":\"غرفة مجلس الإدارة\",\"productSku\":\"CHA-WAI-0002\",\"quantity\":3,\"supplierQuery\":\"good line \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 4,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"هبة مصطفى\",\"clientPhone\":\"01012347040\",\"projectTitle\":\"غرفة مجلس الإدارة\",\"productSku\":\"TAB-0011\",\"quantity\":3,\"supplierQuery\":\"MAC \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 5,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"شركة النور\",\"clientPhone\":\"01012346742\",\"projectTitle\":\"مكتب الإدارة\",\"productSku\":\"CHA-CON-0025\",\"quantity\":1,\"supplierQuery\":\"مصنع كراسي فايبر مصطفى شرف \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 6,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مؤسسة البنيان\",\"clientPhone\":\"01012346775\",\"projectTitle\":\"تجهيز الفرع الجديد\",\"productSku\":\"CHA-MES-0031\",\"quantity\":2,\"supplierQuery\":\"mac \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 7,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مكتب المدار\",\"clientPhone\":\"01012347144\",\"projectTitle\":\"غرفة مجلس الإدارة\",\"productSku\":\"CAB-0051\",\"quantity\":3,\"supplierQuery\":\"good line \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 8,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"نور أحمد\",\"clientPhone\":\"01012347132\",\"projectTitle\":\"Meeting room\",\"productSku\":\"CAB-0034\",\"quantity\":7,\"supplierQuery\":\"مصنع كراسي فايبر مصطفى شرف \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 9,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": false,
+      "exactMatch": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مكتب المدار\",\"clientPhone\":\"01012346682\",\"projectTitle\":\"عدد 5 من مصنع كراسي فايبر\",\"productSku\":\"CAB-0005\",\"supplierQuery\":\"مصنع كراسي فايبر مصطفى شرف \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 10,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": true,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"مؤسسة البنيان\",\"clientPhone\":\"01012347027\",\"projectTitle\":\"New branch fit-out\",\"productSku\":\"SOF-0064\",\"quantity\":6,\"supplierQuery\":\"مصنع كراسي فايبر مصطفى شرف \"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 11,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": false,
+      "exactMatch": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"هبة مصطفى\",\"clientPhone\":\"01012346872\",\"projectTitle\":\"غرفة مجلس الإدارة\",\"productSku\":\"EXE-0006\",\"quantity\":3,\"supplierQuery\":\"كروaserifi\",\"taskType\":\"BUY\"}],\"unparsed\":[]}"
+    },
+    {
+      "index": 12,
+      "validJson": true,
+      "actionKindsExact": true,
+      "contractValid": true,
+      "exactMatch": false,
+      "expectedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "predictedKinds": [
+        "CREATE_ORDER_BUNDLE"
+      ],
+      "completion": "{\"actions\":[{\"kind\":\"CREATE_ORDER_BUNDLE\",\"clientName\":\"هبة مصطفى\",\"clientPhone\":\"01012347082\",\"projectTitle\":\"Executive office\",\"productSku\":\"WOR-0041\",\"quantity\":5,\"supplierQuery\":\"كروسي فايبر مصطفى شرف \"}],\"unparsed\":[]}"
+    }
+  ]
+}
